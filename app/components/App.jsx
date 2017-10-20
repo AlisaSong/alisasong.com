@@ -4,7 +4,7 @@ export default class App extends React.Component {
     render() {
         return (
             <main>
-                <header>To Do List Manager</header>
+                <header>Alisa Song</header>
                 {this.props.children}
             </main>
         );

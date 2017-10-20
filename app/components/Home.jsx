@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from '../index.css';
 
-export default class ToDoList extends React.Component {
+export default class Home extends React.Component {
     constructor(props) {
         super(props);
 
