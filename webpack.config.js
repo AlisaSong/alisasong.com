@@ -1,62 +1,92 @@
-var path = require('path');
-var webpack = require('webpack');
+var isProd = process.env.NODE_ENV === 'production'
+    , webpack = require('webpack')
+    , path = require('path')
+    , autoprefixer = require('autoprefixer')
+    , csswring = require('csswring')
+    , mqpacker = require('css-mqpacker')
+    , values = require('postcss-modules-values')
+    , postcss_nested = require('postcss-nested')
+    , postcss_color = require('postcss-color-function')
+    , package = require('./package.json')
+
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+    , HtmlWebpackPlugin = require('html-webpack-plugin')
+
+var cssLoaders = 'style!css?modules!postcss'
+
+function extract(loaders) {
+    return ExtractTextPlugin.extract('style', loaders.substr(loaders.indexOf('!')))
+}
+
+var entry = isProd ? {
+    app: './app/index.jsx',
+    vendors: ['react', 'react-router'] //, 'lodash']
+} : {
+        app: [
+            'webpack-dev-server/client?http://0.0.0.0:8080',
+            'webpack/hot/only-dev-server',
+            './app/index.jsx'
+        ]
+    }
 
 module.exports = {
-  entry: path.join(__dirname, 'index'),
-  output: {
-    path: path.join(__dirname, '/dist'),
-    filename: 'app.js',
-    publicPath: '/assets/'
-  },
-  resolve: {
-    alias: {
-      // Allows `import example from 'modules/example';`
-      'modules': path.join(__dirname, 'modules'),
+    debug: !isProd
+    , devtool: 'eval'
+    , entry: entry
 
-      // Allows `import example from 'components/example';`
-      'components': path.join(__dirname, 'shared/components'),
-      'containers': path.join(__dirname, 'shared/containers'),
-      'routes': path.join(__dirname, 'routes'),
-
-      // Allows sass importing: `@import '~styles/mixins/example';`
-      'styles': path.join(__dirname, 'assets/styles'),
-
-      // Allows importing images: `import logo from 'images/logo.png';`
-      'images': path.join(__dirname, 'assets/images'),
-
-      // Allows referencing of fonts in css `src: url('fonts/comic-sans.woff');`
-      'fonts': path.join(__dirname, 'assets/fonts')
+    , output: {
+        path: './dist'
+        , filename: isProd ? '[name].[chunkhash].js' : 'app.js'
+        , chunkFilename: isProd ? '[chunkhash].js' : '[id].js'
     }
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: 'babel?stage=0', // enable ES7 experimental features
-        include: __dirname
-      },
-      {
-        test: /\.s?css$/,
+
+    , module: {
         loaders: [
-          'style',
-          'css?modules&localIdentName=[name]__[local]___[hash:base64:5]',
-          'sass'
-        ],
-        include: [
-          path.join(__dirname, 'routes'),
-          path.join(__dirname, 'shared')
+            {
+                test: /\.jsx?$/,
+                loaders: (isProd ? [] : ['react-hot']).concat(['babel']),
+                exclude: /node_modules/
+            }
+            , { test: /\.css$/, loader: isProd ? extract(cssLoaders) : cssLoaders }
+            , { test: /\.png$/, loader: "url?limit=100000&mimetype=image/png" }
+            , { test: /\.svg$/, loader: "url?limit=100000&mimetype=image/svg+xml" }
+            , { test: /\.gif$/, loader: "url?limit=100000&mimetype=image/gif" }
+            , { test: /\.jpg$/, loader: "file" }
         ]
-      },
-      {
-        test: /\.(png|jpg|jpeg|gif)$/,
-        loader: 'file?name=[path][name]___[hash:base64:5].[ext]',
-        include: path.join(__dirname, 'assets/img')
-      },
-      {
-        test: /\.(eot|woff2?|ttf|svg)$/,
-        loader: 'file',
-        include: path.join(__dirname, 'assets/fonts')
-      }
-    ]
-  }
+    }
+
+    , postcss: function () {
+        return [
+            values
+            , postcss_nested
+            , postcss_color
+            , autoprefixer
+            , mqpacker
+            , csswring
+        ]
+    }
+
+    , plugins: isProd ? [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
+        new webpack.optimize.CommonsChunkPlugin('vendors', '[name].[hash].js'),
+        new ExtractTextPlugin('[name].[hash].css'),
+        new HtmlWebpackPlugin({
+            title: package.name,
+            template: './template.html',
+            production: isProd
+        })
+    ] : [
+            new webpack.NoErrorsPlugin(),
+            new HtmlWebpackPlugin({
+                title: package.name,
+                template: './template.html'
+            })
+        ]
+
+    , resolve: {
+        modulesDirectories: ['app', 'node_modules']
+        , extensions: ['', '.js', '.json', '.jsx', '.css']
+    }
 };
