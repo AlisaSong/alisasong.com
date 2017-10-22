@@ -48,15 +48,15 @@ section {
     margin: 0;
     padding: 0;
 
-    & li
-{
-    display: inline-block;
-    font-size: 26px;
-    padding: 0px 10px;
-}
+    & li {
+        display: inline-block;
+        font-size: 26px;
+        padding: 0px 10px;
+    }
 
     & li:hover {
         color: #B77B82;
+        cursor: pointer;
     }
 }
 
@@ -71,4 +71,11 @@ section {
         -1px 1px 0 rgba(84,84,84,0.2);
 }
 
+@media only screen and (max-width: 450px) {
+    .navigation {
+        & li {
+            width: 100%;
+        }
+    }
+}
 

@@ -25,6 +25,10 @@ export default class Home extends React.Component {
         };
     }
 
+    onClickLink(link) {
+        alert(link);
+    }
+
     render() {
         return (
             <section>
@@ -35,7 +39,8 @@ export default class Home extends React.Component {
                 <h2 className={styles.textShadow}>front-end developer based in Kirkland, WA</h2>
                 <ul className={styles.navigation}>
                     {this.state.routes.map((route, index) =>
-                        <li className={styles.textShadow}
+                        <li onClick={() => this.onClickLink(route.link)}
+                            className={styles.textShadow}
                             key={index}>
                             {route.displayText}
                         </li>
