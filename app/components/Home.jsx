@@ -28,8 +28,8 @@ export default class Home extends React.Component {
     render() {
         return (
             <section>
-                <div className={styles.backgroundImageWrapper}>
-                    <img className={styles.backgroundImage} src={backgroundImage} />
+                <div className={styles.backgroundImage}>
+                    {/*<img className={styles.backgroundImage} src={backgroundImage} />*/}
                 </div>
                 <h1>Alisa Song</h1>
                 <h2>front-end developer based in Kirkland, WA</h2>
