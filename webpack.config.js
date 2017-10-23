@@ -14,6 +14,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 var cssLoaders = 'style!css?modules!postcss'
 
+var title = 'Alisa Song'
+
 function extract(loaders) {
     return ExtractTextPlugin.extract('style', loaders.substr(loaders.indexOf('!')))
 }
@@ -73,14 +75,14 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin('vendors', '[name].[hash].js'),
         new ExtractTextPlugin('[name].[hash].css'),
         new HtmlWebpackPlugin({
-            title: package.name,
+            title: title,
             template: './template.html',
             production: isProd
         })
     ] : [
             new webpack.NoErrorsPlugin(),
             new HtmlWebpackPlugin({
-                title: package.name,
+                title: title,
                 template: './template.html'
             })
         ]

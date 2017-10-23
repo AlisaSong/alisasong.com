@@ -1,7 +1,7 @@
 {
-    "name": "to-do-list",
+    "name": "alisa-song",
     "version": "0.0.1",
-    "description": "Make a to-do list",
+    "description": "Personal website",
     "main": "bundle.js",
     "scripts": {
         "env": "env",
@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/AlisaSong/to-do-list.git"
+        "url": "https://github.com/AlisaSong/alisasong.git"
     },
     "keywords": [
         "webpack",
@@ -24,9 +24,9 @@
     "author": "Alisa Song",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/AlisaSong/to-do-list/issues"
+        "url": "https://github.com/AlisaSong/alisasong/issues"
     },
-    "homepage": "https://github.com/AlisaSong/to-do-list",
+    "homepage": "https://github.com/AlisaSong/alisasong",
     "babel": {
         "presets": [
             "es2015",
