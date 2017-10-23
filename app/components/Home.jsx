@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router'
 
 import styles from '../index.css';
 
@@ -10,23 +11,16 @@ export default class Home extends React.Component {
 
         this.state = {
             routes: [{
-                displayText: 'Home',
-                link: 'home'
-            }, {
                 displayText: 'About',
-                link: 'about'
+                link: '/about'
             }, {
                 displayText: 'Portfolio',
-                link: 'portfolio'
+                link: '/portfolio'
             }, {
                 displayText: 'Contact',
-                link: 'contact'
+                link: '/contact'
             }]
         };
-    }
-
-    onClickLink(link) {
-        alert(link);
     }
 
     render() {
@@ -39,10 +33,9 @@ export default class Home extends React.Component {
                 <h2 className={styles.textShadow}>front-end developer based in Kirkland, WA</h2>
                 <ul className={styles.navigation}>
                     {this.state.routes.map((route, index) =>
-                        <li onClick={() => this.onClickLink(route.link)}
-                            className={styles.textShadow}
+                        <li className={styles.textShadow}
                             key={index}>
-                            {route.displayText}
+                            <Link to={route.link}>{route.displayText}</Link>
                         </li>
                     )}
                 </ul>
