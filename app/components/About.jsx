@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Header from './components/Header'
+
 import styles from '../index.css';
 
 export default class About extends React.Component {

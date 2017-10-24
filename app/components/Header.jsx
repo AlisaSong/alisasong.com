@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Header from './components/Header'
-
 import styles from '../index.css';
 
 export default class Contact extends React.Component {
@@ -14,9 +12,10 @@ export default class Contact extends React.Component {
 
     render() {
         return (
-            <section>
-                <span>Contact</span>
-            </section>
+            <header>
+                <p className={styles.headerName}>Alisa</p>
+                <p className={styles.headerName}>Song</p>
+            </header>
         );
     }
 }

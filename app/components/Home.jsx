@@ -26,19 +26,21 @@ export default class Home extends React.Component {
     render() {
         return (
             <section>
+                <div className={styles.homeWrapper}>
                 <div className={styles.backgroundImage}>
                     {/*<img className={styles.backgroundImage} src={backgroundImage} />*/}
                 </div>
-                <h1 className={styles.textShadow}>Alisa Song</h1>
-                <h2 className={styles.textShadow}>front-end developer based in Kirkland, WA</h2>
+                <h1>Alisa Song</h1>
+                <h2 className={styles.textShadow}><span className={styles.pinkText}>front-end developer</span> based in <span className={styles.pinkText}>Kirkland</span>, WA</h2>
                 <ul className={styles.navigation}>
                     {this.state.routes.map((route, index) =>
                         <li className={styles.textShadow}
                             key={index}>
-                            <Link to={route.link}>{route.displayText}</Link>
+                            <Link className={styles.link} to={route.link}>{route.displayText}</Link>
                         </li>
                     )}
-                </ul>
+                    </ul>
+                </div>
             </section>
         );
     }
