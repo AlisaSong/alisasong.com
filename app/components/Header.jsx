@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../index.css';
+import styles from './header.css';
 
 export default class Contact extends React.Component {
     constructor(props) {
