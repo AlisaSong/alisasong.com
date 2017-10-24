@@ -5,7 +5,7 @@
     "main": "bundle.js",
     "scripts": {
         "env": "env",
-        "start": "webpack-dev-server --hot",
+        "start": "webpack-dev-server --hot --open --history-api-fallback",
         "build": "NODE_ENV=production webpack -p --config webpack.config.js",
         "clean": "test -d dist && rm -r dist/"
     },

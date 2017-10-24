@@ -18,6 +18,10 @@ h2 {
     padding-right: 5%;
 }
 
+header {
+    background-color: #d3d3d3;
+}
+
 main {
     position: absolute;
     left: 0;

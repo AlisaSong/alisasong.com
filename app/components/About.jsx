@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from './components/Header'
+import Header from './Header'
 
 import styles from '../index.css';
 
@@ -15,6 +15,7 @@ export default class About extends React.Component {
     render() {
         return (
             <section>
+                <Header />
                 <span>About</span>
             </section>
         );
