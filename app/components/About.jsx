@@ -2,7 +2,7 @@ import React from 'react';
 
 import Header from './Header'
 
-import styles from '../index.css';
+import styles from '../styles/index.css';
 
 export default class About extends React.Component {
     constructor(props) {

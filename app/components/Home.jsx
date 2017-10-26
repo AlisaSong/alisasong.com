@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router'
 
-import styles from '../index.css';
+import styles from '../styles/index.css';
 
 import backgroundImage from '../images/home-background.png';
 
