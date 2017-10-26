@@ -1,0 +1,13 @@
+﻿body
+{
+}
+
+.aboutSection {
+    background-color: #fff4c2;
+    bottom: 0;
+    color: #000;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 110px;
+}

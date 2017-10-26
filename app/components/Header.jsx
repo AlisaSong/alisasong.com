@@ -7,6 +7,27 @@ export default class Contact extends React.Component {
         super(props);
 
         this.state = {
+            tabs: [{
+                isActive: true,
+                link: 'about',
+                name: 'ABOUT'
+            }, {
+                isActive: false,
+                link: 'portfolio',
+                name: 'PORTFOLIO'
+            }, {
+                isActive: false,
+                link: 'specialties',
+                name: 'SPECIALTIES'
+            }, {
+                isActive: false,
+                link: 'work-with-me',
+                name: 'WORK WITH ME'
+            }, {
+                isActive: false,
+                link: 'contact',
+                name: 'CONTACT'
+            }]
         };
     }
 
@@ -16,6 +37,16 @@ export default class Contact extends React.Component {
                 <div className={styles.headerNameWrapper}>
                     <p className={styles.headerName}>Alisa</p>
                     <p className={styles.headerName}>Song</p>
+                </div>
+
+                <div>
+                    <ul className={styles.tabs}>
+                        {this.state.tabs.map((tab, index) =>
+                            <li className={styles.tab} key={index}>
+                                {tab.name}
+                            </li>
+                        )}
+                    </ul>
                 </div>
             </header>
         );

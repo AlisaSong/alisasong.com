@@ -3,7 +3,10 @@
 }
 
 header {
-    background-color: #d3d3d3;
+    border-bottom: 1px solid #fff4c2;
+    color: #d3d3d3;
+    height: 110px;
+    line-height: 110px;
 }
 
 .headerName {
@@ -16,6 +19,29 @@ header {
 }
 
 .headerNameWrapper {
+    display: inline-block;
+    float: left;
     height: 110px;
     width: 160px;
+}
+
+.tab {
+    display: inline-block;
+    margin: 0 8px;
+}
+
+.tabs {
+    display: inline-block;
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 650px;
+}
+
+
+@media only screen and (max-width: 810px) {
+    .tabs {
+        display: none;
+    }
 }
