@@ -15,17 +15,27 @@ export default class About extends React.Component {
     }
 
     getCirclesDiamonds(size) {
-        let result = '';
+        let result = [];
 
         for (let i = 0; i < size; i++) {
-            if (Math.floor(Math.random() * 2) == 0) {
-                result += '◆ ';
+            if (this.getRandom(0, 1) === 0) {
+                result.push({
+                    cycle: styles['circlesDiamonds' + this.getRandom(1, 3)],
+                    display: '◆ '
+                });
             } else {
-                result += '● ';
+                result.push({
+                    cycle: styles['circlesDiamonds' + this.getRandom(1, 3)],
+                    display: '● '
+                });
             }
         }
 
         return result;
+    }
+
+    getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     render() {
@@ -34,9 +44,23 @@ export default class About extends React.Component {
                 <Header />
                 <div className={styles.aboutSection}>
                     <div className={styles.headerWrapper}>
-                        <div className={styles.circlesDiamondsShort}>{this.state.circlesDiamondsShort}</div>
+                        <div className={styles.circlesDiamondsShort}>
+                            {this.state.circlesDiamondsShort.map((shape, index) =>
+                                <span className={shape.cycle}
+                                    key={index}>
+                                    {shape.display}
+                                </span>
+                            )}
+                        </div>
                         <div className={styles.aboutTitle}>ABOUT ME</div>
-                        <div className={styles.circlesDiamondsLong}>{this.state.circlesDiamondsLong}</div>
+                        <div className={styles.circlesDiamondsLong}>
+                            {this.state.circlesDiamondsLong.map((shape, index) =>
+                                <span className={shape.cycle}
+                                    key={index}>
+                                    {shape.display}
+                                </span>
+                            )}
+                        </div>
                     </div>
 
                     <p className={styles.aboutContent}>
