@@ -13,8 +13,10 @@ export default class Contact extends React.Component {
     render() {
         return (
             <header>
-                <p className={styles.headerName}>Alisa</p>
-                <p className={styles.headerName}>Song</p>
+                <div className={styles.headerNameWrapper}>
+                    <p className={styles.headerName}>Alisa</p>
+                    <p className={styles.headerName}>Song</p>
+                </div>
             </header>
         );
     }
