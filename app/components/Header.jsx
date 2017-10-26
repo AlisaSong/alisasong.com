@@ -35,8 +35,8 @@ export default class Contact extends React.Component {
         return (
             <header>
                 <div className={styles.headerNameWrapper}>
-                    <p className={styles.headerName}>Alisa</p>
-                    <p className={styles.headerName}>Song</p>
+                    <p className={styles.headerName}>Alisa Song</p>
+                    <p className={styles.headerNameShort}>AS</p>
                 </div>
 
                 <div>

@@ -11,10 +11,18 @@ header {
 
 .headerName {
     font-size: 44px;
-    height: 55px;
-    line-height: 55px;
+    height: 110px;
+    line-height: 110px;
     margin: 0;
-    padding: 0 0 0 10px;
+    text-align: center;
+}
+
+.headerNameShort {
+    display: none;
+    font-size: 44px;
+    height: 110px;
+    line-height: 110px;
+    margin: 0;
     text-align: center;
 }
 
@@ -22,7 +30,7 @@ header {
     display: inline-block;
     float: left;
     height: 110px;
-    width: 160px;
+    width: 280px;
 }
 
 .tab {
@@ -36,12 +44,27 @@ header {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 650px;
+    width: 600px;
 }
 
 
-@media only screen and (max-width: 810px) {
+@media only screen and (max-width: 900px) {
+    .headerName {
+        display: none;
+    }
+
+    .headerNameShort {
+        display: initial;
+    }
+
+    .headerNameWrapper {
+        width: 120px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
     .tabs {
         display: none;
     }
 }
+
