@@ -45,20 +45,20 @@ h1 {
 
 .circlesDiamonds1 {
     animation-delay: 1s;
-    animation-duration: 5s;
+    animation-duration: 8s;
     animation-iteration-count: infinite;
     animation-name: cycle1;
 }
 
 .circlesDiamonds2 {
     animation-delay: 2s;
-    animation-duration: 5s;
+    animation-duration: 8s;
     animation-iteration-count: infinite;
     animation-name: cycle2;
 }
 
 .circlesDiamonds3 {
-    animation-duration: 5s;
+    animation-duration: 8s;
     animation-iteration-count: infinite;
     animation-name: cycle3;
 }
@@ -85,29 +85,29 @@ h1 {
 
 @keyframes cycle1 {
     0% {
-        color: purple;
+        color: gray;
     }
 
     20% {
-        color: blue;
+        color: floralwhite;
     }
 
     40% {
-        color: black;
+        color: firebrick;
     }
 
     60% {
-        color: green;
+        color: rosybrown;
     }
 
     80% {
-        color: red;
+        color: lightpink;
     }
 }
 
 @keyframes cycle2 {
     0% {
-        color: black;
+        color: gray;
     }
 
     20% {
@@ -119,11 +119,11 @@ h1 {
     }
 
     60% {
-        color: blue;
+        color: lightgoldenrodyellow;
     }
 
     80% {
-        color: red;
+        color: seagreen;
     }
 }
 
