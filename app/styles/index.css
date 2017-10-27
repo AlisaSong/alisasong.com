@@ -39,11 +39,13 @@ section {
     margin: 5% auto 4% auto;
     padding-left: 5%;
     padding-right: 5%;
+    text-align: center;
 }
 
 .homeTitle {
     font-size: 18vmin;
     margin: 10% auto auto auto;
+    text-align: center;
 }
 
 .hvrGrow {
