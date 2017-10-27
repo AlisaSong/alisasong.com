@@ -1,8 +1,9 @@
 import React from 'react';
 
-import Header from './Header'
+import Header from './Header';
 
-import styles from '../styles/index.css';
+import styles from '../styles/portfolio.css';
+
 
 export default class Portfolio extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ export default class Portfolio extends React.Component {
     render() {
         return (
             <section>
+                <Header />
                 <span>Portfolio</span>
             </section>
         );
