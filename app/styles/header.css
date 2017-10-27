@@ -33,9 +33,18 @@ header {
     width: 280px;
 }
 
+.headerNameWrapper:hover {
+    cursor: pointer;
+}
+
 .tab {
     display: inline-block;
     margin: 0 8px;
+}
+
+.tab:hover {
+    cursor: pointer;
+
 }
 
 .tabs {

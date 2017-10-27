@@ -1,6 +1,8 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 
 import styles from '../styles/header.css';
+import globalStyles from '../styles/index.css';
 
 export default class Contact extends React.Component {
     constructor(props) {
@@ -9,23 +11,23 @@ export default class Contact extends React.Component {
         this.state = {
             tabs: [{
                 isActive: true,
-                link: 'about',
+                link: '/about',
                 name: 'ABOUT'
             }, {
                 isActive: false,
-                link: 'portfolio',
+                link: '/portfolio',
                 name: 'PORTFOLIO'
             }, {
                 isActive: false,
-                link: 'specialties',
+                link: '/specialties',
                 name: 'SPECIALTIES'
             }, {
                 isActive: false,
-                link: 'work-with-me',
+                link: '/work-with-me',
                 name: 'WORK WITH ME'
             }, {
                 isActive: false,
-                link: 'contact',
+                link: '/contact',
                 name: 'CONTACT'
             }]
         };
@@ -34,7 +36,7 @@ export default class Contact extends React.Component {
     render() {
         return (
             <header>
-                <div className={styles.headerNameWrapper}>
+                <div className={styles.headerNameWrapper} onClick={() => { browserHistory.push('/') }}>
                     <p className={styles.headerName}>Alisa Song</p>
                     <p className={styles.headerNameShort}>AS</p>
                 </div>
@@ -42,7 +44,9 @@ export default class Contact extends React.Component {
                 <div>
                     <ul className={styles.tabs}>
                         {this.state.tabs.map((tab, index) =>
-                            <li className={styles.tab} key={index}>
+                            <li className={[styles.tab, globalStyles.hvrGrow].join(' ')}
+                                key={index} 
+                                onClick={() => { browserHistory.push(tab.link) }}>
                                 {tab.name}
                             </li>
                         )}

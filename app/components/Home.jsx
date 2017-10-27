@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router'
+import { Link } from 'react-router';
 
 import styles from '../styles/index.css';
 
@@ -17,6 +17,12 @@ export default class Home extends React.Component {
                 displayText: 'Portfolio',
                 link: '/portfolio'
             }, {
+                displayText: 'Specialties',
+                link: '/specialities'
+            }, {
+                displayText: 'Work With Me',
+                link: '/work-with-me'
+            }, {
                 displayText: 'Contact',
                 link: '/contact'
             }]
@@ -27,18 +33,18 @@ export default class Home extends React.Component {
         return (
             <section>
                 <div className={styles.homeWrapper}>
-                <div className={styles.backgroundImage}>
-                    {/*<img className={styles.backgroundImage} src={backgroundImage} />*/}
-                </div>
-                <h1>Alisa Song</h1>
-                <h2 className={styles.textShadow}><span className={styles.pinkText}>front-end developer</span> based in <span className={styles.pinkText}>Kirkland</span>, WA</h2>
-                <ul className={styles.navigation}>
-                    {this.state.routes.map((route, index) =>
-                        <li className={styles.textShadow}
-                            key={index}>
-                            <Link className={styles.link} to={route.link}>{route.displayText}</Link>
-                        </li>
-                    )}
+                    <div className={styles.backgroundImage}>
+                        {/*<img className={styles.backgroundImage} src={backgroundImage} />*/}
+                    </div>
+                    <h1 className={styles.homeTitle}>Alisa Song</h1>
+                    <h2 className={[styles.textShadow, styles.homeDescription].join(' ')}><span className={styles.pinkText}>front-end developer</span> based in <span className={styles.pinkText}>Kirkland</span>, WA</h2>
+                    <ul className={styles.navigation}>
+                        {this.state.routes.map((route, index) =>
+                            <li className={styles.textShadow}
+                                key={index}>
+                                <Link className={styles.link} to={route.link}>{route.displayText}</Link>
+                            </li>
+                        )}
                     </ul>
                 </div>
             </section>
