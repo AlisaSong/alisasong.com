@@ -3,7 +3,6 @@ body {
     font-family: 'Helvetica Neue LT Pro';
     margin: 0px;
     padding: 0px;
-    text-align: center;
 }
 
 main {
@@ -73,6 +72,7 @@ section {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    text-align: center;
 
     & li {
         display: inline-block;

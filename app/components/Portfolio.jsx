@@ -17,8 +17,13 @@ export default class Portfolio extends React.Component {
         return (
             <section>
                 <Header />
-                <div>
-                <span>Portfolio</span>
+                <h1 className={styles.portfolioTitle}>PORTFOLIO</h1>
+                <div className={styles.projectSection}>
+                    <h2 className={styles.projectTitle}>Happy Tummy Grill</h2>
+                    <div className={styles.clientBrief}>
+                        <h3 className={styles.projectDescriptionTitle}>Client Brief</h3>
+                        <p className={styles.projectDescriptionText}></p>
+                    </div>
                 </div>
             </section>
         );
