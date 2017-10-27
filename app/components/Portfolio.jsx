@@ -17,7 +17,9 @@ export default class Portfolio extends React.Component {
         return (
             <section>
                 <Header />
+                <div>
                 <span>Portfolio</span>
+                </div>
             </section>
         );
     }

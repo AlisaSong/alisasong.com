@@ -43,7 +43,7 @@ export default class About extends React.Component {
             <section>
                 <Header />
                 <div className={styles.aboutSection}>
-                    <div className={styles.headerWrapper}>
+                    <div className={styles.aboutTitleWrapper}>
                         <div className={styles.circlesDiamondsShort}>
                             {this.state.circlesDiamondsShort.map((shape, index) =>
                                 <span className={shape.cycle}

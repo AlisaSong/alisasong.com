@@ -27,6 +27,15 @@
     width: 150px;
 }
 
+.aboutTitleWrapper {
+    font-family: 'Helvetica Neue LT Pro';
+    font-size: 26px;
+    height: 100px;
+    line-height: 100px;
+    text-align: left;
+    width: 100%;
+}
+
 .circlesDiamondsLong,
 .circlesDiamondsShort {
     float: left;
@@ -65,16 +74,6 @@
 .circlesDiamondsShort {
     width: 100px;
 }
-
-.headerWrapper {
-    font-family: 'Helvetica Neue LT Pro';
-    font-size: 26px;
-    height: 100px;
-    line-height: 100px;
-    text-align: left;
-    width: 100%;
-}
-
 
 @keyframes cycle1 {
     0% {
@@ -140,4 +139,10 @@
     80% {
         color: rebeccapurple;
     }
+}
+
+
+
+@media only screen and (max-width: 800px) {
+
 }
