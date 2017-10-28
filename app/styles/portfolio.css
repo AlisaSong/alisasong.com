@@ -1,6 +1,4 @@
-﻿.projectContentWrapper {
-    width: 60%;
-}
+﻿
 
 .portfolioTitle {
     color: #000;
@@ -29,12 +27,18 @@
 .projectButton {
 }
 
+.projectContentWrapper {
+    float: left;
+    width: 60%;
+}
+
 .projectDescription {
     color: #000;
 }
 
 .projectDescriptionText {
     color: #000;
+    padding: 0 120px 0 0;
 }
 
 .projectDescriptionTitle {
@@ -52,11 +56,13 @@
 }
 
 .projectMobileDisplay {
+    float: right;
     width: 40%;
 }
 
 .projectPhoneImage {
-    
+    height: 45%;
+    width: 45%;
 }
 
 .projectSection {

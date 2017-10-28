@@ -27,7 +27,7 @@ export default class Portfolio extends React.Component {
                             <div className={styles.projectDescription}>
                                 <h3 className={styles.projectDescriptionTitle}>Client Brief</h3>
                                 <p className={styles.projectDescriptionText}>
-                                    This client needed a website for their business to provide their customers with information about thei
+                                    This client needed a website for their business to provide their customers with information about their
                                     menu and draw in potential customers from the area. I built and designed a clean, easy-to-read website that
                                     showcases their menu items and provides answers to basic questions about their restaurant. I added telemetry
                                     to the site using Google Analytics and saw that visits to the site regularly spiked before lunch and dinner times.
