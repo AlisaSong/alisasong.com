@@ -1,5 +1,5 @@
-﻿.clientBrief {
-    color: #000;
+﻿.projectContentWrapper {
+    width: 60%;
 }
 
 .portfolioTitle {
@@ -10,9 +10,27 @@
     height: 100px;
     line-height: 100px;
     margin: 0 auto;
-    padding: 0 0 0 100px;
     text-align: left;
     width: 100%;
+}
+
+.portfolioWrapper {
+    padding: 0 0 0 100px;
+}
+
+.projectBullet {
+    
+}
+
+.projectButtons {
+    width: 40%;
+}
+
+.projectButton {
+}
+
+.projectDescription {
+    color: #000;
 }
 
 .projectDescriptionText {
@@ -23,8 +41,22 @@
     color: #ff006e;
     font-weight: bold;
     margin: 30px 0 5px auto;
-    padding: 0 0 0 100px;
     text-align: left;
+}
+
+.projectDesktopDisplay {
+    width: 100%;
+}
+
+.projectDesktopImage {
+}
+
+.projectMobileDisplay {
+    width: 40%;
+}
+
+.projectPhoneImage {
+    
 }
 
 .projectSection {
@@ -37,7 +69,6 @@
     font-size: 26px;
     font-weight: normal;
     margin: 0 auto;
-    padding: 0 0 0 100px;
     text-align: left;
     width: 100%;
 }
