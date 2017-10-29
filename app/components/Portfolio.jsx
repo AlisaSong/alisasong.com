@@ -33,20 +33,20 @@ export default class Portfolio extends React.Component {
                                     The website uses Google Analytics and since its launch, website traffic
                                     regularly spikes before lunch and dinner times.
                                 </p>
-                                <h3 className={styles.projectDescriptionTitle}>Services Provided</h3>
+                                <h3 className={styles.projectDescriptionTitle}>Skills Used</h3>
                                 <ul className={styles.projectDescriptionText}>
                                     <li className={styles.projectBullet}>Web Development with JavaScript, HTML5, CSS3</li>
                                     <li className={styles.projectBullet}>Telemetry with Google Analytics</li>
                                     <li className={styles.projectBullet}>Web Copywriting</li>
                                 </ul>
+                                <div className={styles.projectButtons}>
+                                    <button className={styles.projectButton} type="button">Take a Look</button>
+                                    <button className={styles.projectButton} type="button">GitHub</button>
+                                </div>
                             </div>
                         </div>
                         <div className={styles.projectMobileDisplay}>
                             <img className={styles.projectPhoneImage} src={projectPhoneImage} />
-                            <div className={styles.projectButtons}>
-                                <button className={styles.projectButton} type="button">Take a Look</button>
-                                <button className={styles.projectButton} type="button">GitHub</button>
-                            </div>
                         </div>
                         <div className={styles.projectDesktopDisplay}>
                             <img className={styles.projectDesktopImage} src={projectDesktopImage} />
