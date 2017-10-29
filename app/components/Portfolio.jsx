@@ -27,10 +27,11 @@ export default class Portfolio extends React.Component {
                             <div className={styles.projectDescription}>
                                 <h3 className={styles.projectDescriptionTitle}>Client Brief</h3>
                                 <p className={styles.projectDescriptionText}>
-                                    This client needed a website for their business to provide their customers with information about their
-                                    menu and draw in potential customers from the area. I built and designed a clean, easy-to-read website that
-                                    showcases their menu items and provides answers to basic questions about their restaurant. I added telemetry
-                                    to the site using Google Analytics and saw that visits to the site regularly spiked before lunch and dinner times.
+                                    This client needed a website for their business to provide information about their menu and hours to their current customers
+                                    and draw in potential customers from the area. I built a clean, easy-to-read website that
+                                    showcases their menu items and provides answers to basic questions about their restaurant. 
+                                    The website uses Google Analytics and since its launch, website traffic
+                                    regularly spikes before lunch and dinner times.
                                 </p>
                                 <h3 className={styles.projectDescriptionTitle}>Services</h3>
                                 <ul className={styles.projectDescriptionText}>
