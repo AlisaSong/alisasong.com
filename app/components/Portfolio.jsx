@@ -25,7 +25,7 @@ export default class Portfolio extends React.Component {
                         <div className={styles.projectContentWrapper}>
                             <h2 className={styles.projectTitle}>Happy Tummy Grill</h2>
                             <div className={styles.projectDescription}>
-                                <h3 className={styles.projectDescriptionTitle}>Client Brief</h3>
+                                <h3 className={styles.projectDescriptionTitle}>The Project</h3>
                                 <p className={styles.projectDescriptionText}>
                                     This client needed a website for their business to provide information about their menu and hours to their current customers
                                     and draw in potential customers from the area. I built a clean, easy-to-read website that
@@ -33,7 +33,7 @@ export default class Portfolio extends React.Component {
                                     The website uses Google Analytics and since its launch, website traffic
                                     regularly spikes before lunch and dinner times.
                                 </p>
-                                <h3 className={styles.projectDescriptionTitle}>Services</h3>
+                                <h3 className={styles.projectDescriptionTitle}>Services Provided</h3>
                                 <ul className={styles.projectDescriptionText}>
                                     <li className={styles.projectBullet}>Web Development with JavaScript, HTML5, CSS3</li>
                                     <li className={styles.projectBullet}>Telemetry with Google Analytics</li>
