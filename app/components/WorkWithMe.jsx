@@ -4,7 +4,7 @@ import Header from './Header'
 
 import styles from '../styles/index.css';
 
-export default class Contact extends React.Component {
+export default class WorkWithMe extends React.Component {
     constructor(props) {
         super(props);
 
@@ -16,7 +16,7 @@ export default class Contact extends React.Component {
         return (
             <section>
                 <Header />
-                <span>Contact</span>
+                <span>WORK WITH ME</span>
             </section>
         );
     }
