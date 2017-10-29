@@ -8,7 +8,7 @@
 }
 
 .aboutSection {
-    background-color: #fff4c2;
+    background-color: #fff;
     bottom: 0;
     color: #000;
     font-size: 22px;
@@ -75,8 +75,21 @@
     width: 100px;
 }
 
+.skill {
+    color: #fff;
+    background: #ff006e;
+    border: 3px solid ##ff006e;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 20px;
+    text-align: center;
+    width: 120px;
+}
+
 .skills {
     list-style-type: none;
+    text-align: center;
 }
 
 

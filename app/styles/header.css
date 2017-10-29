@@ -3,8 +3,9 @@
 }
 
 header {
-    border-bottom: 1px solid #fff4c2;
-    color: #d3d3d3;
+    background: #fff4c2;
+    border-bottom: 1px solid #fff;
+    color: #000;
     height: 110px;
     line-height: 110px;
 }
@@ -39,12 +40,11 @@ header {
 
 .tab {
     display: inline-block;
-    margin: 0 8px;
+    margin: 0 20px;
 }
 
 .tab:hover {
     cursor: pointer;
-
 }
 
 .tabs {

@@ -90,7 +90,7 @@ export default class About extends React.Component {
                     </div>
                     <ul className={styles.skills}>
                         {this.state.skills.map((skill, index) =>
-                            <li key={index}>{skill}</li>
+                            <li className={styles.skill} key={index}>{skill}</li>
                         )}
                     </ul>
                 </div>
