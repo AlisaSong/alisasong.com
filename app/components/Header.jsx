@@ -19,10 +19,6 @@ export default class Contact extends React.Component {
                 name: 'PORTFOLIO'
             }, {
                 isActive: false,
-                link: '/specialties',
-                name: 'SPECIALTIES'
-            }, {
-                isActive: false,
                 link: '/work-with-me',
                 name: 'WORK WITH ME'
             }, {

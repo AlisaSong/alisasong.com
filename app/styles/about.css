@@ -75,6 +75,11 @@
     width: 100px;
 }
 
+.skills {
+    list-style-type: none;
+}
+
+
 @keyframes cycle1 {
     0% {
         color: gray;

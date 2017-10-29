@@ -17,9 +17,6 @@ export default class Home extends React.Component {
                 displayText: 'Portfolio',
                 link: '/portfolio'
             }, {
-                displayText: 'Specialties',
-                link: '/specialities'
-            }, {
                 displayText: 'Work With Me',
                 link: '/work-with-me'
             }, {

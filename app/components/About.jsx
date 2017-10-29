@@ -10,7 +10,8 @@ export default class About extends React.Component {
 
         this.state = {
             circlesDiamondsLong: this.getCirclesDiamonds(300),
-            circlesDiamondsShort: this.getCirclesDiamonds(50)
+            circlesDiamondsShort: this.getCirclesDiamonds(50),
+            skills: ['JavaScript', 'React', 'Node.js', 'HTML', 'CSS', 'C#']
         };
     }
 
@@ -62,12 +63,36 @@ export default class About extends React.Component {
                             )}
                         </div>
                     </div>
-
                     <p className={styles.aboutContent}>
                         Hi there! I am a front-end developer who builds high quality, responsive websites and apps.
-                    I enjoy problem-solving with code and love learning new technologies that challenge my creativity and coding capabilities.
-                    While you're here, take a look around and feel free to reach out if you'd like to start a conversation!
-                    -Alisa</p>
+                        I enjoy problem-solving with code and love learning new technologies that challenge my creativity and coding capabilities.
+                        While you're here, take a look around and feel free to reach out if you'd like to start a conversation!
+                        -Alisa
+                    </p>
+                    <div className={styles.aboutTitleWrapper}>
+                        <div className={styles.circlesDiamondsShort}>
+                            {this.state.circlesDiamondsShort.map((shape, index) =>
+                                <span className={shape.cycle}
+                                    key={index}>
+                                    {shape.display}
+                                </span>
+                            )}
+                        </div>
+                        <div className={styles.aboutTitle}>SKILLS</div>
+                        <div className={styles.circlesDiamondsLong}>
+                            {this.state.circlesDiamondsLong.map((shape, index) =>
+                                <span className={shape.cycle}
+                                    key={index}>
+                                    {shape.display}
+                                </span>
+                            )}
+                        </div>
+                    </div>
+                    <ul className={styles.skills}>
+                        {this.state.skills.map((skill, index) =>
+                            <li key={index}>{skill}</li>
+                        )}
+                    </ul>
                 </div>
             </section>
         );
