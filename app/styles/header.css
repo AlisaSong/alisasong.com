@@ -1,13 +1,36 @@
-﻿body
-{
-}
-
-header {
-    background: #fff4c2;
-    border-bottom: 1px solid #fff;
+﻿header {
+    background: #fff;
+    border-bottom: 1px solid #000;
     color: #000;
     height: 110px;
     line-height: 110px;
+}
+
+.circlesDiamonds {
+    font-size: 12px;
+    height: 110px;
+    margin: 0 550px 0 280px;
+    overflow: hidden;
+}
+
+.circlesDiamonds1 {
+    animation-delay: 1s;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-name: cycle1;
+}
+
+.circlesDiamonds2 {
+    animation-delay: 2s;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-name: cycle2;
+}
+
+.circlesDiamonds3 {
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-name: cycle3;
 }
 
 .headerName {
@@ -28,7 +51,6 @@ header {
 }
 
 .headerNameWrapper {
-    display: inline-block;
     float: left;
     height: 110px;
     width: 280px;
@@ -50,11 +72,76 @@ header {
 .tabs {
     display: inline-block;
     float: right;
-    list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 600px;
 }
+
+@keyframes cycle1 {
+    0% {
+        color: gray;
+    }
+
+    20% {
+        color: floralwhite;
+    }
+
+    40% {
+        color: firebrick;
+    }
+
+    60% {
+        color: rosybrown;
+    }
+
+    80% {
+        color: lightpink;
+    }
+}
+
+@keyframes cycle2 {
+    0% {
+        color: gray;
+    }
+
+    20% {
+        color: royalblue;
+    }
+
+    40% {
+        color: purple;
+    }
+
+    60% {
+        color: lightgoldenrodyellow;
+    }
+
+    80% {
+        color: seagreen;
+    }
+}
+
+@keyframes cycle3 {
+    0% {
+        color: lightcoral;
+    }
+
+    20% {
+        color: indianred;
+    }
+
+    40% {
+        color: cornflowerblue;
+    }
+
+    60% {
+        color: cornsilk;
+    }
+
+    80% {
+        color: rebeccapurple;
+    }
+}
+
 
 
 @media only screen and (max-width: 900px) {

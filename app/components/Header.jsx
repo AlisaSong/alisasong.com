@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { browserHistory } from 'react-router';
 
 import styles from '../styles/header.css';
@@ -9,6 +9,7 @@ export default class Contact extends React.Component {
         super(props);
 
         this.state = {
+            circlesDiamonds: this.getCirclesDiamonds(300),
             tabs: [{
                 isActive: true,
                 link: '/about',
@@ -29,6 +30,30 @@ export default class Contact extends React.Component {
         };
     }
 
+    getCirclesDiamonds(size) {
+        let result = [];
+
+        for (let i = 0; i < size; i++) {
+            if (this.getRandom(0, 1) === 0) {
+                result.push({
+                    cycle: styles['circlesDiamonds' + this.getRandom(1, 3)],
+                    display: '◆ '
+                });
+            } else {
+                result.push({
+                    cycle: styles['circlesDiamonds' + this.getRandom(1, 3)],
+                    display: '● '
+                });
+            }
+        }
+
+        return result;
+    }
+
+    getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
     render() {
         return (
             <header>
@@ -37,16 +62,23 @@ export default class Contact extends React.Component {
                     <p className={styles.headerNameShort}>AS</p>
                 </div>
 
-                <div>
-                    <ul className={styles.tabs}>
-                        {this.state.tabs.map((tab, index) =>
-                            <li className={[styles.tab, globalStyles.hvrGrow].join(' ')}
-                                key={index} 
-                                onClick={() => { browserHistory.push(tab.link) }}>
-                                {tab.name}
-                            </li>
-                        )}
-                    </ul>
+                <ul className={styles.tabs}>
+                    {this.state.tabs.map((tab, index) =>
+                        <li className={[styles.tab, globalStyles.hvrGrow].join(' ')}
+                            key={index}
+                            onClick={() => { browserHistory.push(tab.link) }}>
+                            {tab.name}
+                        </li>
+                    )}
+                </ul>
+
+                <div className={styles.circlesDiamonds}>
+                    {this.state.circlesDiamonds.map((shape, index) =>
+                        <span className={shape.cycle}
+                            key={index}>
+                            {shape.display}
+                        </span>
+                    )}
                 </div>
             </header>
         );
