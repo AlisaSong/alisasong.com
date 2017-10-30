@@ -25,12 +25,12 @@ export default class About extends React.Component {
                         <div className={styles.aboutSection}>
                             <h1 className={styles.aboutTitle}>ABOUT ME</h1>
                             <p className={styles.aboutContent}>
-                                Hi there! I am a front-end developer who builds high quality, responsive websites and apps.
-                        I enjoy problem-solving with code and love learning new technologies that challenge my creativity and coding capabilities.
-                        While you're here, take a look around and feel free to reach out if you'd like to start a conversation!
-                        -Alisa
-                    </p>
-                            <h1 className={styles.aboutTitle}>SKILLS</h1>
+                                Hi there! I'm Alisa, a front-end developer based in Kirkland.
+                                I love building beautiful, high-quality websites and apps, and am passionate about learning new technologies to grow my coding expertise.
+                                In my free time, I enjoy practicing yoga, playing the flute, walking my dog and playing video games.
+                                While you're here, take a look around and feel free reach out if you'd like to start a conversation!
+                            </p>
+                            <h1 className={styles.aboutTitle}>MY SKILLSET</h1>
                             <ul className={styles.skills}>
                                 {this.state.skills.map((skill, index) =>
                                     <li className={styles.skill} key={index}>{skill}</li>

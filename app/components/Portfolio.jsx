@@ -26,10 +26,9 @@ export default class Portfolio extends React.Component {
                                 <h2 className={styles.projectTitle}>Happy Tummy Grill</h2>
                                 <h3 className={styles.projectDescriptionTitle}>The Project</h3>
                                 <p className={styles.projectDescriptionText}>
-                                    This client needed a website for their business to provide information about their menu and hours to their current customers
-                                    and draw in potential customers from the area. I built a clean, easy-to-read website that
-                                    showcases their menu items and provides answers to basic questions about their restaurant.
-                                    The website uses Google Analytics and since its launch, website traffic
+                                    I built this client's first website from the ground-up, making sure the site is clean and easy-to-read while
+                                    showcasing the menu items and key business information.
+                                    I incorporated Google Analytics to track the success of this site, and since its launch, website traffic
                                     regularly spikes before lunch and dinner times.
                                 </p>
                                 <h3 className={styles.projectDescriptionTitle}>Skills Used</h3>
