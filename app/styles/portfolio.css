@@ -1,7 +1,4 @@
-﻿
-
-.portfolioTitle {
-    color: #000;
+﻿.portfolioTitle {
     float: left;
     font-size: 26px;
     font-weight: normal;
@@ -29,13 +26,13 @@
 .projectButton {
 }
 
+.projectContent {
+    padding-left: 100px;
+}
+
 .projectContentWrapper {
     float: left;
     width: 60%;
-}
-
-.projectDescription {
-    color: #000;
 }
 
 .projectDescriptionText {
@@ -45,17 +42,26 @@
 .projectDescriptionTitle {
     color: #ff006e;
     font-weight: bold;
-    margin: 30px 0 5px auto;
+    margin: 10px 0;
+    padding: 0;
     text-align: left;
 }
 
 .projectDesktopDisplay {
+    float: left;
     width: 100%;
 }
 
 .projectDesktopImage {
-    height: 70%;
-    width: 70%;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.projectDesktopImageWrapper {
+    margin: 20px auto 0 auto;
+    width: 80%;
 }
 
 .projectMobileDisplay {
@@ -64,20 +70,20 @@
 }
 
 .projectPhoneImage {
-    height: 60%;
-    width: 60%;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
 }
 
-.projectSection {
-    color: #000;
+.projectPhoneImageWrapper {
+    height: 400px;
 }
 
 .projectTitle {
     color: #000;
-    float: left;
     font-size: 26px;
     font-weight: normal;
-    margin: 0 auto;
-    text-align: left;
+    margin: 0;
     width: 100%;
 }
