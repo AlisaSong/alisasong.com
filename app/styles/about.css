@@ -1,34 +1,24 @@
 ﻿.aboutContent {
-    text-align: left;
+    font-size: 22px;
     padding: 0 0 0 100px;
-    width: 700px;
+    text-align: left;
+    width: 80%;
 }
 
 .aboutSection {
-    bottom: 0;
     color: #000;
-    font-size: 22px;
-    left: 0;
-    overflow: hidden;
-    position: absolute;
-    right: 0;
-    top: 110px;
+    margin: 0 auto;
+    width: 80%;
 }
 
 .aboutTitle {
     float: left;
-    height: 100px;
-    line-height: 100px;
-    text-align: center;
-    width: 150px;
-}
-
-.aboutTitleWrapper {
     font-family: 'Helvetica Neue LT Pro';
     font-size: 26px;
+    font-weight: normal;
     height: 100px;
     line-height: 100px;
-    text-align: left;
+    margin: 0;
     width: 100%;
 }
 
