@@ -1,14 +1,10 @@
-﻿body {
-}
-
-.aboutContent {
+﻿.aboutContent {
     text-align: left;
     padding: 0 0 0 100px;
     width: 700px;
 }
 
 .aboutSection {
-    background-color: #fff;
     bottom: 0;
     color: #000;
     font-size: 22px;
