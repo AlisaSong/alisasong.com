@@ -16,11 +16,12 @@ body {
 }
 
 main {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
     bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 p {
@@ -106,6 +107,18 @@ section {
     color: #ffe4e1;
 }
 
+.sectionFadeIn {
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-name: section-fade-in;
+}
+
+.sectionFadeOut {
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-name: section-fade-out;
+}
+
 .textShadow {
         text-shadow: 2px 0 0 rgba(84,84,84,0.2),
         -2px 0 0 rgba(84,84,84,0.2),
@@ -115,6 +128,26 @@ section {
         -1px -1px 0 rgba(84,84,84,0.2),
         1px -1px 0 rgba(84,84,84,0.2),
         -1px 1px 0 rgba(84,84,84,0.2);
+}
+
+@keyframes section-fade-in {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes section-fade-out {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100%);
+    }
 }
 
 @media only screen and (max-width: 550px) {

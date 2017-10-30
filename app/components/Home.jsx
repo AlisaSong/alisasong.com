@@ -3,8 +3,6 @@ import { Link } from 'react-router';
 
 import styles from '../styles/index.css';
 
-import backgroundImage from '../images/home-background.png';
-
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -28,13 +26,16 @@ export default class Home extends React.Component {
 
     render() {
         return (
-            <section>
+            <section className={this.props.myClass}>
                 <div className={styles.homeWrapper}>
-                    <div className={styles.backgroundImage}>
-                        {/*<img className={styles.backgroundImage} src={backgroundImage} />*/}
-                    </div>
+                    <div className={styles.backgroundImage}></div>
                     <h1 className={styles.homeTitle}>Alisa Song</h1>
-                    <h2 className={[styles.textShadow, styles.homeDescription].join(' ')}><span className={styles.pinkText}>front-end developer</span> based in <span className={styles.pinkText}>Kirkland</span>, WA</h2>
+                    <h2 className={[styles.textShadow, styles.homeDescription].join(' ')}>
+                        <span className={styles.pinkText}>front-end developer</span>
+                        <span> based in </span>
+                        <span className={styles.pinkText}>Kirkland</span>
+                        <span> , WA</span>
+                    </h2>
                     <ul className={styles.navigation}>
                         {this.state.routes.map((route, index) =>
                             <li className={styles.textShadow}
