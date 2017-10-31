@@ -21,21 +21,34 @@
     width: 100%;
 }
 
-.skill {
+.framework, .language, .tool {
     color: #fff;
-    background: #ff006e;
-    border: 3px solid ##ff006e;
     display: inline-block;
     height: 40px;
     line-height: 40px;
     margin: 10px 20px;
     text-align: center;
-    width: 120px;
+    width: 150px;
+}
+
+.framework {
+    background: #ff66a8;
+    border: 3px solid #ff66a8;
+}
+
+.language {
+    background: #ff006e;
+    border: 3px solid #ff006e;
 }
 
 .skills {
     list-style-type: none;
     text-align: center;
+}
+
+.tool {
+    background: #b2004d;
+    border: 3px solid #b2004d;
 }
 
 @media only screen and (max-width: 800px) {

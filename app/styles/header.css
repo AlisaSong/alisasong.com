@@ -113,17 +113,17 @@
     }
 
     60% {
-        color: lightgoldenrodyellow;
+        color: #fafad2;
     }
 
     80% {
-        color: seagreen;
+        color: #54ff9f;
     }
 }
 
 @keyframes cycle3 {
     0% {
-        color: lightcoral;
+        color: #f08080;
     }
 
     20% {
@@ -131,15 +131,15 @@
     }
 
     40% {
-        color: cornflowerblue;
+        color: #6495ed;
     }
 
     60% {
-        color: cornsilk;
+        color: #fff8dc;
     }
 
     80% {
-        color: rebeccapurple;
+        color: #663399;
     }
 }
 
