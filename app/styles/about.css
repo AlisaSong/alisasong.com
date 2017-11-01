@@ -33,12 +33,16 @@
 
 .framework {
     background: #ff66a8;
-    border: 3px solid #ff66a8;
+    border: 2px solid #e55b97;
+    border-top-color: #b24775;
+    border-left-color: #b24775;
 }
 
 .language {
-    background: #ff006e;
-    border: 3px solid #ff006e;
+    background: #e50063;
+    border: 2px solid #ff006e;
+    border-top-color: #b2004d;
+    border-left-color: #b2004d;
 }
 
 .skills {
@@ -48,7 +52,9 @@
 
 .tool {
     background: #b2004d;
-    border: 3px solid #b2004d;
+    border: 2px solid #a00045;
+    border-top-color: #6a002e;
+    border-left-color: #6a002e;
 }
 
 @media only screen and (max-width: 800px) {
