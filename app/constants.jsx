@@ -3,5 +3,6 @@ export const constants = {
     pathContact: '/contact',
     pathHome: '/',
     pathPortfolio: '/portfolio',
+    pathWorkWithMe: '/work-with-me',
     previousLocation: 'asPreviousLocation'
 }

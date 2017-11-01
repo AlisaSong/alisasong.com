@@ -2,7 +2,7 @@ import React from 'react';
 
 import Header from './Header'
 
-import styles from '../styles/index.css';
+import globalStyles from '../styles/index.css';
 
 export default class WorkWithMe extends React.Component {
     constructor(props) {
