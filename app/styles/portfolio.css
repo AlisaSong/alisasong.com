@@ -20,21 +20,22 @@
 }
 
 .projectButtons {
+    margin: 10px 0;
     width: 40%;
 }
 
-.projectButton {
-    border-color: #b2004d;
-    background-color: #fff;
-    font-weight: bold;
-    margin: 0 5px;
-}
 
 .projectButtonLink {
+    border: 2px solid;
+    border-bottom-color: #ff006e;
+    border-left-color: #b2004d;
+    border-right-color: #ff006e;
+    border-top-color: #b2004d;
+    background-color: #fff;
     color: #000;
-    height: 40px;
-    line-height: 40px;
-    padding: 20px 15px;
+    font-weight: bold;
+    margin: 0 5px;
+    padding: 10px 15px;
     text-decoration: none;
 }
 

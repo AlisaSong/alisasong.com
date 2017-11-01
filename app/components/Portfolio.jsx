@@ -69,13 +69,12 @@ export default class Portfolio extends React.Component {
                                     </ul>
                                     <div className={styles.projectButtons}>
                                         {this.state.buttons.map((button, index) =>
-                                            <button className={styles.projectButton}
+                                            <a className={styles.projectButtonLink}
+                                                href={button.link}
                                                 key={index}
-                                                type="button">
-                                                <a className={styles.projectButtonLink} target="blank" href={button.link}>
-                                                    {button.displayText}
-                                                </a>
-                                            </button>
+                                                target="blank">
+                                                {button.displayText}
+                                            </a>
                                         )}
                                     </div>
                                 </div>
