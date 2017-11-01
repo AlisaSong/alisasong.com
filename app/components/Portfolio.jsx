@@ -17,6 +17,14 @@ export default class Portfolio extends React.Component {
 
         this.state = {
             isAnimating: window[constants.previousLocation] === constants.pathHome,
+            buttons: [{
+                displayText: 'Visit Project',
+                link: '//www.happytummygrill.com'
+            }, {
+                displayText: 'GitHub',
+                link: '//www.github.com/AlisaSong/happytummygrill.com'
+            }
+            ]
         };
     }
 
@@ -60,8 +68,15 @@ export default class Portfolio extends React.Component {
                                         <li className={styles.projectBullet}>Web Copywriting</li>
                                     </ul>
                                     <div className={styles.projectButtons}>
-                                        <button className={styles.projectButton} type="button">Take a Look</button>
-                                        <button className={styles.projectButton} type="button">GitHub</button>
+                                        {this.state.buttons.map((button, index) =>
+                                            <button className={styles.projectButton}
+                                                key={index}
+                                                type="button">
+                                                <a className={styles.projectButtonLink} target="blank" href={button.link}>
+                                                    {button.displayText}
+                                                </a>
+                                            </button>
+                                        )}
                                     </div>
                                 </div>
                             </div>
