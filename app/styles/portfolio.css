@@ -16,7 +16,7 @@
 }
 
 .projectBullet {
-    
+    padding: 2px 0;
 }
 
 .projectButtons {
@@ -24,6 +24,11 @@
 }
 
 .projectButton {
+    border-color: #b2004d;
+    background-color: #fff;
+    font-weight: bold;
+    margin: 10px 5px;
+    padding: 8px 15px;
 }
 
 .projectContent {
