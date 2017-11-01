@@ -1,3 +1,36 @@
-﻿body
-{
+﻿.contactContentWrapper {
+    font-size: 22px;
+    padding: 0 0 0 100px;
+    text-align: left;
+    width: 80%;
+}
+
+.contactFormWrapper {
+}
+
+.contactWrapper {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.description {
+    font-size: 22px;
+    text-align: left;
+}
+
+.label {
+    & span {
+        display: block;
+    }
+}
+
+.title {
+    float: left;
+    font-family: 'Helvetica Neue LT Pro';
+    font-size: 26px;
+    font-weight: normal;
+    height: 100px;
+    line-height: 100px;
+    margin: 0;
+    width: 100%;
 }
