@@ -2,7 +2,8 @@ import React from 'react';
 
 import Header from './Header'
 
-import styles from '../styles/index.css';
+import styels from '../styles/contact.css';
+import globalStyles from '../styles/index.css';
 
 export default class Contact extends React.Component {
     constructor(props) {
@@ -16,7 +17,8 @@ export default class Contact extends React.Component {
         return (
             <section>
                 <Header />
-                <span>Contact</span>
+                <h1>LET'S COLLABORATE</h1>
+
             </section>
         );
     }

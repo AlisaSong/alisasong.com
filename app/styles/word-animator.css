@@ -1,13 +1,10 @@
 ﻿.pinkText {
     animation-name: pinkText;
     animation-fill-mode: forwards;
+    color: #ff99c5;
 }
 
 @keyframes pinkText {
-    from {
-        color: #000;
-    }
-
     to {
         color: #e50063;
     }

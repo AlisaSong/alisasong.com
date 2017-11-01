@@ -14,7 +14,7 @@ export default class WordAnimator extends React.Component {
 
     getDelay() {
         this.state.delay += 50;
-        return { 'animation-delay': this.state.delay + 'ms' };
+        return { 'animationDelay': this.state.delay + 'ms' };
     }
 
     getLetters(word) {

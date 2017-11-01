@@ -4,6 +4,8 @@ import Header from './Header';
 import Home from './Home';
 import WordAnimator from './WordAnimator';
 
+import { constants } from '../constants';
+
 import globalStyles from '../styles/index.css';
 import styles from '../styles/about.css';
 
@@ -13,8 +15,9 @@ export default class About extends React.Component {
 
         this.state = {
             delay: 1000,
-            languages: ['JavaScript', 'HTML', 'CSS', 'C#'],
             frameworks: ['React'],
+            isAnimating: window[constants.previousLocation] === constants.pathHome,
+            languages: ['JavaScript', 'HTML', 'CSS', 'C#'],
             tools: ['Node.js', 'Git', 'GitHub', 'Visual Studio', 'Chrome DevTools']
         };
     }
@@ -25,11 +28,25 @@ export default class About extends React.Component {
         return delay;
     }
 
+    getSectionClass() {
+        let sectionClass = '';
+
+        if (this.props.move) {
+            sectionClass = this.props.move;
+        } else if (this.state.isAnimating) {
+            sectionClass = globalStyles.sectionMoveInFromBottom;
+        }
+
+        return sectionClass;
+    }
+
     render() {
         return (
             <div>
-                <Home myClass={globalStyles.sectionFadeOut} />
-                <section className={globalStyles.sectionFadeIn}>
+                {this.state.isAnimating &&
+                    <Home move={globalStyles.sectionMoveOutUp} />
+                }
+                <section className={this.getSectionClass()}>
                     <Header />
                     <article>
                         <div className={styles.aboutSection}>
