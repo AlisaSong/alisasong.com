@@ -20,19 +20,19 @@
 }
 
 .projectButtons {
-    margin: 10px 0;
     width: 40%;
 }
 
 
 .projectButtonLink {
+    background-color: #fff;
     border: 2px solid;
     border-bottom-color: #ff006e;
     border-left-color: #b2004d;
     border-right-color: #ff006e;
     border-top-color: #b2004d;
-    background-color: #fff;
     color: #000;
+    display: inline-block;
     font-weight: bold;
     margin: 0 5px;
     padding: 10px 15px;
@@ -50,6 +50,7 @@
 
 .projectDescriptionText {
     color: #000;
+    margin: 0 0 20px 0;
 }
 
 .projectDescriptionTitle {
