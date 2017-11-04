@@ -3,9 +3,9 @@ import React from 'react';
 import Header from './Header';
 import Home from './Home';
 
-import { constants } from '../constants';
+import { ajax } from '../services/ajax';
 
-import Ajax from '../services/Ajax';
+import { constants } from '../constants';
 
 import globalStyles from '../styles/index.css';
 import styles from '../styles/contact.css';
@@ -16,7 +16,12 @@ export default class Contact extends React.Component {
         super(props);
 
         this.state = {
-            isAnimating: window[constants.previousLocation] === constants.pathHome
+            isAnimating: window[constants.previousLocation] === constants.pathHome,
+            isSendingMail: false,
+            company: '',
+            email: '',
+            message: '',
+            name: ''
         };
     }
 
@@ -32,8 +37,56 @@ export default class Contact extends React.Component {
         return sectionClass;
     }
 
+    onChangeCompany(event) {
+        this.setState({
+            company: event.target.value
+        });
+    }
+
+    onChangeEmail(event) {
+        this.setState({
+            email: event.target.value
+        });
+    }
+
+    onChangeMessage(event) {
+        this.setState({
+            message: event.target.value
+        });
+    }
+
+    onChangeName(event) {
+        this.setState({
+            name: event.target.value
+        });
+    }
+
     onClickSendMail() {
-        alert(constants.urlMailMe);
+        this.setState({
+            isSendingMail: true
+        });
+        let body = {
+            company: this.state.company,
+            email: this.state.email,
+            message: this.state.message,
+            name: this.state.name
+        };
+        ajax('post', constants.urlMailMe, body, (error) => {
+            if (error) {
+                alert('There was a problem sending the mail');
+            } else {
+                alert('Message received!');
+                this.setState({
+                    company: '',
+                    email: '',
+                    message: '',
+                    name: ''
+                });
+            }
+            this.setState({
+                isSendingMail: false
+            });
+        });
     }
 
     render() {
@@ -52,19 +105,35 @@ export default class Contact extends React.Component {
                                 <div className={styles.contactFormWrapper}>
                                     <label className={styles.label}>
                                         <span>Name*</span>
-                                        <input type="text" />
+                                        <input type="text"
+                                            disabled={this.state.isSendingMail}
+                                            onChange={(event) => this.onChangeName(event)}
+                                            value={this.state.name}
+                                        />
                                     </label>
                                     <label className={styles.label}>
                                         <span>Company*</span>
-                                        <input type="text" />
+                                        <input type="text"
+                                            disabled={this.state.isSendingMail}
+                                            onChange={(event) => this.onChangeCompany(event)}
+                                            value={this.state.company}
+                                        />
                                     </label>
                                     <label className={styles.label}>
                                         <span>Email*</span>
-                                        <input type="text" />
+                                        <input type="text"
+                                            disabled={this.state.isSendingMail}
+                                            onChange={(event) => this.onChangeEmail(event)}
+                                            value={this.state.email}
+                                        />
                                     </label>
                                     <label className={styles.label}>
                                         <span>Message*</span>
-                                        <input type="text" />
+                                        <input type="text"
+                                            disabled={this.state.isSendingMail}
+                                            onChange={(event) => this.onChangeMessage(event)}
+                                            value={this.state.message}
+                                        />
                                     </label>
                                     <button onClick={() => this.onClickSendMail()} type="button">Send</button>
                                 </div>

@@ -1,31 +1,28 @@
-export default class Ajax {
-    delete(url, callback) {
-        this.xhr('delete', url, callback);
-    }
+export const ajax = (method, url, body, callback) => {
+    const xhr = new XMLHttpRequest();
 
-    get(url, callback) {
-        this.xhr('get', url, callback);
-    }
+    let payload = undefined;
 
-    post(url, callback) {
-        this.xhr('post', url, callback);
-    }
+    xhr.open(method, url);
 
-    put(url, callback) {
-        this.xhr('put', url, callback);
-    }
-
-    xhr(method, url, callback) {
-        const xhr = new XMLHttpRequest();
-
-        xhr.open(method, url);
-
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                callback(xhr.responseText);
+    if (method === 'post' || method === 'put') {
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        payload = '';
+        const properties = Object.keys(body);
+        for (let i = 0; i < properties.length; i++) {
+            if (body[properties[i]]) {
+                payload += properties[i] + '=' + encodeURIComponent(body[properties[i]]) + '&';
             }
         }
-
-        xhr.send();
     }
+
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            callback();
+        } else if (xhr.readyState === 4 && xhr.status !== 200) {
+            callback(xhr.statusText);
+        }
+    }
+
+    xhr.send(payload);
 }
