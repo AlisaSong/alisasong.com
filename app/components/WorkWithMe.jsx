@@ -6,7 +6,7 @@ import Home from './Home';
 import { constants } from '../constants';
 
 import globalStyles from '../styles/index.css';
-import styles from '../styles/portfolio.css';
+import styles from '../styles/work-with-me.css';
 
 
 export default class WorkWithMe extends React.Component {
