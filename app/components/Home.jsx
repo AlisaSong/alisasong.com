@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 import About from './About';
 import Portfolio from './Portfolio';
+import WorkWithMe from './WorkWithMe';
 
 import { constants } from '../constants';
 
@@ -50,6 +51,9 @@ export default class Home extends React.Component {
                 }
                 {this.state.previousLocation === constants.pathPortfolio &&
                     <Portfolio move={styles.sectionMoveOutDown} />
+                }
+                {this.state.previousLocation === constants.pathWorkWithMe &&
+                    <WorkWithMe move={styles.sectionMoveOutDown} />
                 }
                 <section className={this.getSectionClass()}>
                     <div className={styles.homeWrapper}>
