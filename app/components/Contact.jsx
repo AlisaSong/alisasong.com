@@ -5,6 +5,8 @@ import Home from './Home';
 
 import { constants } from '../constants';
 
+import Ajax from '../services/Ajax';
+
 import globalStyles from '../styles/index.css';
 import styles from '../styles/contact.css';
 
@@ -28,6 +30,10 @@ export default class Contact extends React.Component {
         }
 
         return sectionClass;
+    }
+
+    onClickSendMail() {
+        alert(constants.urlMailMe);
     }
 
     render() {
@@ -60,7 +66,7 @@ export default class Contact extends React.Component {
                                         <span>Message*</span>
                                         <input type="text" />
                                     </label>
-                                    <button type="button">Send</button>
+                                    <button onClick={() => this.onClickSendMail()} type="button">Send</button>
                                 </div>
                             </div>
                         </div>

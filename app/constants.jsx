@@ -4,5 +4,6 @@ export const constants = {
     pathHome: '/',
     pathPortfolio: '/portfolio',
     pathWorkWithMe: '/work-with-me',
-    previousLocation: 'asPreviousLocation'
+    previousLocation: 'asPreviousLocation',
+    urlMailMe: '$(asUrlMailMe)'
 }
