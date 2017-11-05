@@ -6,7 +6,7 @@
   "scripts": {
     "env": "env",
     "start": "webpack-dev-server --hot --open --history-api-fallback",
-    "build": "NODE_ENV=production webpack -p --config webpack.config.js",
+    "build": "webpack -p --config webpack.config.js --history-api-fallback",
     "clean": "test -d dist && rm -r dist/"
   },
   "repository": {

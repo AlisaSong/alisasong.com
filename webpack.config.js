@@ -1,4 +1,4 @@
-var isProd = process.env.NODE_ENV === 'production';
+var isProd = false;
 var webpack = require('webpack');
 var path = require('path');
 var autoprefixer = require('autoprefixer');

@@ -13,4 +13,5 @@ Navigate to http://localhost:8080
 
 To deploy assets run the following command:
 
-npm run deploy
+1. Change the isProd parameter inside webpack.config.js to true
+2. npm run build
