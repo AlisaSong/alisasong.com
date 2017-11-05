@@ -1,4 +1,5 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 
 import styles from '../styles/word-animator.css';
 
@@ -8,8 +9,15 @@ export default class WordAnimator extends React.Component {
 
         this.state = {
             delay: props.delay,
-            letters: this.getLetters(props.word)
+            letters: this.getLetters(props.word),
+            link: props.link
         };
+    }
+
+    changePath() {
+        if (this.state.link) {
+            browserHistory.push(this.state.link);
+        }
     }
 
     getDelay() {
@@ -27,7 +35,8 @@ export default class WordAnimator extends React.Component {
 
     render() {
         return (
-            <span>
+            <span className={this.state.link ? styles.pinkTextLink : ''}
+                  onClick={() => { this.changePath() }}>
                 {this.state.letters.map((letter, index) =>
                     <span className={styles.pinkText}
                         key={index}

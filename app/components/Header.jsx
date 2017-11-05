@@ -1,6 +1,9 @@
 ﻿import React from 'react';
 import { browserHistory } from 'react-router';
 
+import { constants } from '../constants';
+
+import fontAwesome from 'font-awesome/css/font-awesome.css';
 import styles from '../styles/header.css';
 import globalStyles from '../styles/index.css';
 
@@ -10,17 +13,24 @@ export default class Contact extends React.Component {
 
         this.state = {
             circlesDiamonds: this.getCirclesDiamonds(300),
+            sites: [{
+                icon: 'github',
+                link: 'https://github.com/AlisaSong'
+            }, {
+                icon: 'linkedin',
+                link: 'https://www.linkedin.com/in/alisa-song-5545b14b/'
+            }],
             tabs: [{
                 isActive: true,
-                link: '/about',
+                link: constants.pathAbout,
                 name: 'ABOUT'
             }, {
                 isActive: false,
-                link: '/portfolio',
+                link: constants.pathPortfolio,
                 name: 'PORTFOLIO'
             }, {
                 isActive: false,
-                link: '/work-with-me',
+                link: constants.pathWorkWithMe,
                 name: 'WORK WITH ME'
             }]
         };
@@ -46,6 +56,10 @@ export default class Contact extends React.Component {
         return result;
     }
 
+    getFontClass(icon) {
+        return [globalStyles.faLink, fontAwesome.fa, fontAwesome['fa-' + icon]].join(' ');
+    }
+
     getRandom(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
@@ -53,17 +67,24 @@ export default class Contact extends React.Component {
     render() {
         return (
             <header>
-                <div className={styles.headerNameWrapper} onClick={() => { browserHistory.push('/') }}>
+                <div className={styles.headerNameWrapper} onClick={() => { browserHistory.push(constants.pathHome) }}>
                     <p className={styles.headerName}>Alisa Song</p>
                     <p className={styles.headerNameShort}>AS</p>
                 </div>
 
                 <ul className={styles.tabs}>
                     {this.state.tabs.map((tab, index) =>
-                        <li className={[styles.tab, globalStyles.hvrGrow].join(' ')}
+                        <li className={styles.tab + ' ' + globalStyles.hvrGrow}
                             key={index}
                             onClick={() => { browserHistory.push(tab.link) }}>
                             {tab.name}
+                        </li>
+                    )}
+                    {this.state.sites.map((site, index) =>
+                        <li className={styles.tab + ' ' + globalStyles.hvrGrow}
+                            key={index}>
+                            <i className={this.getFontClass(site.icon)}
+                               onClick={() => { window.open(site.link, '_blank') }} />
                         </li>
                     )}
                 </ul>

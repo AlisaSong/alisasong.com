@@ -7,6 +7,7 @@ import WorkWithMe from './WorkWithMe';
 
 import { constants } from '../constants';
 
+import fontAwesome from 'font-awesome/css/font-awesome.css';
 import styles from '../styles/index.css';
 
 export default class Home extends React.Component {
@@ -19,13 +20,24 @@ export default class Home extends React.Component {
                 displayText: 'About',
                 link: constants.pathAbout
             }, {
-                    displayText: 'Portfolio',
-                    link: constants.pathPortfolio
+                displayText: 'Portfolio',
+                link: constants.pathPortfolio
             }, {
-                    displayText: 'Work With Me',
-                    link: constants.pathWorkWithMe
+                displayText: 'Work With Me',
+                link: constants.pathWorkWithMe
+            }],
+            sites: [{
+                icon: 'github',
+                link: 'https://github.com/AlisaSong'
+            }, {
+                icon: 'linkedin',
+                link: 'https://www.linkedin.com/in/alisa-song-5545b14b/'
             }]
         };
+    }
+
+    getFontClass(icon) {
+        return [styles.faLink, fontAwesome.fa, fontAwesome['fa-' + icon]].join(' ');
     }
 
     getSectionClass() {
@@ -67,9 +79,17 @@ export default class Home extends React.Component {
                                 <li className={styles.textShadow}
                                     key={index}>
                                     <Link className={styles.link}
-                                        to={route.link}>
+                                          to={route.link}>
                                         {route.displayText}
                                     </Link>
+                                </li>
+                            )}
+                        </ul>
+                        <ul className={styles.navigation}>
+                            {this.state.sites.map((site, index) =>
+                                <li key={index}>
+                                    <i className={this.getFontClass(site.icon)}
+                                       onClick={() => { window.open(site.link, '_blank') }} />
                                 </li>
                             )}
                         </ul>

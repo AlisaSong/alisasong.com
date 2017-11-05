@@ -49,6 +49,10 @@ section {
     z-index: -1;
 }
 
+.faLink {
+    cursor: pointer;
+}
+
 .homeDescription {
     font-size: 5vmin;
     margin: 5% auto 4% auto;

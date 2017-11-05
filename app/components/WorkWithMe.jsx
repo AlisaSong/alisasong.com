@@ -133,10 +133,15 @@ export default class WorkWithMe extends React.Component {
                         <div className={styles.contactWrapper}>
                             <h1 className={styles.title}>LET'S COLLABORATE</h1>
                             <div className={styles.contactContentWrapper}>
-                                <p className={styles.description}>Interested in working together? I'm currently available for hire. Fill out the form below & I'll get back to you within 48 hrs.</p>
+                                <p className={styles.description}>
+                                    Interested in working together? Fill out the form and I'll get back to you within 48 hours.
+                                </p>
+                                <p className={styles.description}>
+                                    Recruiters - I'm currently looking for a full-time position as a front-end developer, feel free to reach out with any opportunities.
+                                </p>
                                 <div className={styles.contactFormWrapper}>
                                     <label className={styles.label}>
-                                        <span className={styles.inputType}>Name (required)</span>
+                                        <span className={styles.inputType}>Name</span>
                                         <input type="text"
                                             className={this.getFormClass(styles.contactFormSlot, this.state.name, this.state.hasNameRefocused)}
                                             disabled={this.state.isSendingMail}
@@ -146,7 +151,7 @@ export default class WorkWithMe extends React.Component {
                                         />
                                     </label>
                                     <label className={styles.label}>
-                                        <span className={styles.inputType}>Company (required)</span>
+                                        <span className={styles.inputType}>Company</span>
                                         <input type="text"
                                             className={this.getFormClass(styles.contactFormSlot, this.state.company, this.state.hasCompanyRefocused)}
                                             disabled={this.state.isSendingMail}
@@ -156,7 +161,7 @@ export default class WorkWithMe extends React.Component {
                                         />
                                     </label>
                                     <label className={styles.label}>
-                                        <span className={styles.inputType}>Email (required)</span>
+                                        <span className={styles.inputType}>Email</span>
                                         <input type="text"
                                             className={this.getFormClass(styles.contactFormSlot, this.state.email, this.state.hasEmailRefocused)}
                                             disabled={this.state.isSendingMail}
@@ -166,7 +171,7 @@ export default class WorkWithMe extends React.Component {
                                         />
                                     </label>
                                     <label className={styles.label}>
-                                        <span className={styles.inputType}>Message (required)</span>
+                                        <span className={styles.inputType}>Message</span>
                                         <textarea
                                             className={this.getFormClass(styles.contactFormSlotBig, this.state.message, this.state.hasMessageRefocused)}
                                             disabled={this.state.isSendingMail}

@@ -14,6 +14,7 @@
     border-top-color: #b2004d;
     font-family: 'Helvetica Neue LT Pro';
     font-size: 16px;
+    height: 28px;
     padding: 1px 2px;
 }
 
@@ -35,7 +36,7 @@
 }
 
 .description {
-    font-size: 22px;
+    font-size: 18px;
     margin: 0 0 25px 0;
     text-align: left;
 }
@@ -46,7 +47,8 @@
 }
 
 .inputType {
-    margin: 7px 0 0 0;
+    height: 30px;
+    line-height: 30px;
 }
 
 .label {

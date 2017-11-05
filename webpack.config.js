@@ -48,43 +48,48 @@ module.exports = {
             : '[id].js'
     },
     module: {
-        loaders: [
-            {
+        loaders: [{
                 test: /constants\.jsx$/,
                 loader: 'string-replace',
                 query: {
                     search: '$(asUrlMailMe)',
                     replace: settings.urlMailMe
                 }
-            },
-            {
+            }, {
                 test: /\.jsx?$/,
                 loaders: (isProd
                     ? []
                     : ['react-hot']).concat(['babel']),
                 exclude: /node_modules/
-            },
-            {
+            }, {
                 test: /\.css$/,
                 loader: isProd
                     ? extract(cssLoaders)
                     : cssLoaders
-            },
-            {
+            }, {
                 test: /\.png$/,
                 loader: "url?limit=100000&mimetype=image/png"
-            },
-            {
-                test: /\.svg$/,
-                loader: "url?limit=100000&mimetype=image/svg+xml"
-            },
-            {
+            }, {
                 test: /\.gif$/,
                 loader: "url?limit=100000&mimetype=image/gif"
-            },
-            {
+            }, {
                 test: /\.jpg$/,
                 loader: "file"
+            }, {
+                test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "url?limit=10000&mimetype=application/font-woff"
+            }, {
+                test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "url?limit=10000&mimetype=application/font-woff"
+            }, {
+                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "url?limit=10000&mimetype=application/octet-stream"
+            }, {
+                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "file"
+            }, {
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "url?limit=10000&mimetype=image/svg+xml"
             }
         ]
     },

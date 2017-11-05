@@ -59,7 +59,7 @@ export default class About extends React.Component {
                                 am <WordAnimator delay={this.getDelay('passionate')} word="passionate" /> about <WordAnimator delay={this.getDelay('learning new technologies')} word="learning new technologies" /> to
                                 grow my <WordAnimator delay={this.getDelay('coding expertise')} word="coding expertise" />.
                                 In my free time, I enjoy practicing yoga, playing the flute, walking my dog and playing video games.
-                                While you're here, take a look around and feel free <WordAnimator delay={this.getDelay('reach out')} word="reach out" /> if
+                                While you're here, take a look around and feel free <WordAnimator delay={this.getDelay('reach out')} link={constants.pathWorkWithMe} word="reach out" /> if
                                 you'd like to start a <WordAnimator delay={this.getDelay('conversation')} word="conversation" />!
                             </p>
                             <h1 className={styles.aboutTitle}>MY SKILLSET</h1>

@@ -4,6 +4,10 @@
     color: #ff99c5;
 }
 
+.pinkTextLink {
+    cursor: pointer;
+}
+
 @keyframes pinkText {
     to {
         color: #e50063;
