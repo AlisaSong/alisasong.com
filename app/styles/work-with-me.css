@@ -1,2 +1,91 @@
-﻿@media only screen and (max-width: 800px) {
+﻿.contactContentWrapper {
+    font-size: 22px;
+    padding: 0 0 0 100px;
+    text-align: left;
+    width: 80%;
+}
+
+.contactFormSlot,
+.contactFormSlotBig {
+    border: 2px solid;
+    border-bottom-color: #ff006e;
+    border-left-color: #b2004d;
+    border-right-color: #ff006e;
+    border-top-color: #b2004d;
+    font-family: 'Helvetica Neue LT Pro';
+    font-size: 16px;
+    padding: 1px 2px;
+}
+
+.contactFormSlot {
+    width: 300px;
+}
+
+.contactFormSlotBig {
+    height: 150px;
+    width: 400px;
+}
+
+.contactFormWrapper {
+}
+
+.contactWrapper {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.description {
+    font-size: 22px;
+    margin: 0 0 25px 0;
+    text-align: left;
+}
+
+.emptyContent {
+    background-color: #ffcccc;
+    border: 1px solid #ff7f7f;
+}
+
+.inputType {
+    margin: 7px 0 0 0;
+}
+
+.label {
+    & span {
+        display: block;
+    }
+
+    & input:focus,
+      textarea:focus {
+        outline: none;
+    }
+}
+
+.sendMailButton {
+    background-color: #fff;
+    border: 2px solid;
+    border-bottom-color: #ff006e;
+    border-left-color: #b2004d;
+    border-right-color: #ff006e;
+    border-top-color: #b2004d;
+    color: #000;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 7px 0 0 0;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.title {
+    float: left;
+    font-family: 'Helvetica Neue LT Pro';
+    font-size: 26px;
+    font-weight: normal;
+    height: 100px;
+    line-height: 100px;
+    margin: 0;
+    width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
 }

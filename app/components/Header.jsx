@@ -22,10 +22,6 @@ export default class Contact extends React.Component {
                 isActive: false,
                 link: '/work-with-me',
                 name: 'WORK WITH ME'
-            }, {
-                isActive: false,
-                link: '/contact',
-                name: 'CONTACT'
             }]
         };
     }

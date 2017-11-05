@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 import About from './About';
 import Portfolio from './Portfolio';
 import WorkWithMe from './WorkWithMe';
-import Contact from './Contact';
 
 import { constants } from '../constants';
 
@@ -25,9 +24,6 @@ export default class Home extends React.Component {
             }, {
                     displayText: 'Work With Me',
                     link: constants.pathWorkWithMe
-            }, {
-                    displayText: 'Contact',
-                    link: constants.pathContact
             }]
         };
     }
@@ -49,9 +45,6 @@ export default class Home extends React.Component {
             <div>
                 {this.state.previousLocation === constants.pathAbout &&
                     <About move={styles.sectionMoveOutDown} />
-                }
-                {this.state.previousLocation === constants.pathContact &&
-                    <Contact move={styles.sectionMoveOutDown} />
                 }
                 {this.state.previousLocation === constants.pathPortfolio &&
                     <Portfolio move={styles.sectionMoveOutDown} />
