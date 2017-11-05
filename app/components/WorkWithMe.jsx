@@ -131,7 +131,9 @@ export default class WorkWithMe extends React.Component {
                     <Header />
                     <article>
                         <div className={styles.contactWrapper}>
-                            <h1 className={styles.title}>LET'S COLLABORATE</h1>
+                            <h1 className={styles.title}>
+                                <span>LET'S COLLABORATE</span>
+                            </h1>
                             <div className={styles.contactContentWrapper}>
                                 <p className={styles.description}>
                                     Interested in working together? Fill out the form and I'll get back to you within 48 hours.

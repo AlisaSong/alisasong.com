@@ -2,7 +2,6 @@
     font-size: 22px;
     padding: 0 0 0 100px;
     text-align: left;
-    width: 80%;
 }
 
 .contactFormSlot,
@@ -19,15 +18,18 @@
 }
 
 .contactFormSlot {
-    width: 300px;
+    max-width: 300px;
+    width: 100%;
 }
 
 .contactFormSlotBig {
     height: 150px;
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
 }
 
 .contactFormWrapper {
+    width: 100%;
 }
 
 .contactWrapper {
@@ -57,7 +59,7 @@
     }
 
     & input:focus,
-      textarea:focus {
+    textarea:focus {
         outline: none;
     }
 }
@@ -79,15 +81,25 @@
 }
 
 .title {
-    float: left;
     font-family: 'Helvetica Neue LT Pro';
     font-size: 26px;
     font-weight: normal;
     height: 100px;
-    line-height: 100px;
     margin: 0;
+    position: relative;
     width: 100%;
+
+    & span {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
 
 @media only screen and (max-width: 800px) {
+    .contactContentWrapper {
+        padding: 0;
+        width: 100%;
+    }
 }
