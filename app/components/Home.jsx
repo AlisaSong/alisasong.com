@@ -72,7 +72,7 @@ export default class Home extends React.Component {
                             <span className={styles.pinkText}>front-end developer</span>
                             <span> based in </span>
                             <span className={styles.pinkText}>Kirkland</span>
-                            <span> , WA</span>
+                            <span>, WA</span>
                         </h2>
                         <ul className={styles.navigation}>
                             {this.state.routes.map((route, index) =>

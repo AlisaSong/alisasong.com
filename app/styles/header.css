@@ -1,9 +1,18 @@
 ﻿header {
     background-color: #fafafa;
-    /*border-bottom: 1px solid #000;*/
     color: #000;
     height: 110px;
     line-height: 110px;
+}
+
+.bars {
+    display: none;
+    float: right;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100px;
 }
 
 .circlesDiamonds {
@@ -31,6 +40,28 @@
     animation-duration: 8s;
     animation-iteration-count: infinite;
     animation-name: cycle3;
+}
+
+.dropdownMenu {
+    background-color: #fafafa;
+    display: none;
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+.dropdownMenu:hover {
+    cursor: pointer;
+}
+
+.dropdownMenuVisible {
+    display: block;
+}
+
+.dropdownMenuVisibleOverride {
+    display: none;
 }
 
 .headerName {
@@ -143,15 +174,17 @@
     }
 }
 
-
-
 @media only screen and (max-width: 900px) {
+    .circlesDiamonds {
+        margin: 0 550px 0 120px;
+    }
+
     .headerName {
         display: none;
     }
 
     .headerNameShort {
-        display: initial;
+        display: block;
     }
 
     .headerNameWrapper {
@@ -160,8 +193,19 @@
 }
 
 @media only screen and (max-width: 720px) {
+    .bars {
+        display: block;
+    }
+
+    .circlesDiamonds {
+        margin: 0 100px 0 120px;
+    }
+
+    .dropdownMenuVisibleOverride {
+        display: block;
+    }
+
     .tabs {
         display: none;
     }
 }
-

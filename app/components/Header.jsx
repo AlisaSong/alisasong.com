@@ -13,6 +13,7 @@ export default class Contact extends React.Component {
 
         this.state = {
             circlesDiamonds: this.getCirclesDiamonds(300),
+            isDropdownMenuVisible: false,
             sites: [{
                 icon: 'github',
                 link: 'https://github.com/AlisaSong'
@@ -56,6 +57,16 @@ export default class Contact extends React.Component {
         return result;
     }
 
+    getDropdownClass() {
+        let dropdownClass = styles.dropdownMenu;
+
+        if (this.state.isDropdownMenuVisible) {
+            dropdownClass += ' ' + styles.dropdownMenuVisible + ' ' + styles.dropdownMenuVisibleOverride;
+        }
+
+        return dropdownClass;
+    }
+
     getFontClass(icon) {
         return [globalStyles.faLink, fontAwesome.fa, fontAwesome['fa-' + icon]].join(' ');
     }
@@ -82,12 +93,17 @@ export default class Contact extends React.Component {
                     )}
                     {this.state.sites.map((site, index) =>
                         <li className={styles.tab + ' ' + globalStyles.hvrGrow}
-                            key={index}>
-                            <i className={this.getFontClass(site.icon)}
-                               onClick={() => { window.open(site.link, '_blank') }} />
+                            key={index}
+                            onClick={() => { window.open(site.link, '_blank') }}>
+                            <i className={this.getFontClass(site.icon)} />
                         </li>
                     )}
                 </ul>
+
+                <div className={styles.bars}
+                    onClick={() => { this.setState({ isDropdownMenuVisible: !this.state.isDropdownMenuVisible }) }}>
+                    <i className={this.getFontClass('bars')} />
+                </div>
 
                 <div className={styles.circlesDiamonds}>
                     {this.state.circlesDiamonds.map((shape, index) =>
@@ -97,6 +113,22 @@ export default class Contact extends React.Component {
                         </span>
                     )}
                 </div>
+
+                {this.state.tabs.map((tab, index) =>
+                    <div className={this.getDropdownClass()}
+                        key={index}
+                        onClick={() => { browserHistory.push(tab.link) }}>
+                        {tab.name}
+                    </div>
+                )}
+
+                {this.state.sites.map((site, index) =>
+                    <div className={this.getDropdownClass()}
+                        key={index}
+                        onClick={() => { window.open(site.link, '_blank') }}>
+                        <i className={this.getFontClass(site.icon)} />
+                    </div>
+                )}
             </header>
         );
     }
