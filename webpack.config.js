@@ -1,4 +1,4 @@
-var isProd = false;
+var isProd = true;
 var webpack = require('webpack');
 var path = require('path');
 var autoprefixer = require('autoprefixer');
@@ -49,49 +49,45 @@ module.exports = {
     },
     module: {
         loaders: [{
-                test: /constants\.jsx$/,
-                loader: 'string-replace',
-                query: {
-                    search: '$(asUrlMailMe)',
-                    replace: settings.urlMailMe
-                }
-            }, {
-                test: /\.jsx?$/,
-                loaders: (isProd
-                    ? []
-                    : ['react-hot']).concat(['babel']),
-                exclude: /node_modules/
-            }, {
-                test: /\.css$/,
-                loader: isProd
-                    ? extract(cssLoaders)
-                    : cssLoaders
-            }, {
-                test: /\.png$/,
-                loader: "url?limit=100000&mimetype=image/png"
-            }, {
-                test: /\.gif$/,
-                loader: "url?limit=100000&mimetype=image/gif"
-            }, {
-                test: /\.jpg$/,
-                loader: "file"
-            }, {
-                test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-                loader: "url?limit=10000&mimetype=application/font-woff"
-            }, {
-                test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-                loader: "url?limit=10000&mimetype=application/font-woff"
-            }, {
-                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-                loader: "url?limit=10000&mimetype=application/octet-stream"
-            }, {
-                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-                loader: "file"
-            }, {
-                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-                loader: "url?limit=10000&mimetype=image/svg+xml"
-            }
-        ]
+            loader: 'string-replace',
+            query: {
+                search: '$(asUrlMailMe)',
+                replace: settings.urlMailMe
+            },
+            test: /constants\.jsx$/
+        }, {
+            exclude: /node_modules/,
+            loaders: (isProd
+                ? []
+                : ['react-hot']).concat(['babel']),
+            test: /\.jsx?$/
+        }, {
+            loader: isProd
+                ? extract(cssLoaders)
+                : cssLoaders,
+            test: /\.css$/
+        }, {
+            loader: 'url-loader',
+            options: {
+                limit: 8192
+            },
+            test: /\.(png|gif|jpg|cur)$/i
+        }, {
+            loader: "url?limit=10000&mimetype=application/font-woff",
+            test: /\.woff(\?v=\d+\.\d+\.\d+)?$/
+        }, {
+            loader: "url?limit=10000&mimetype=application/font-woff",
+            test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/
+        }, {
+            loader: "url?limit=10000&mimetype=application/octet-stream",
+            test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/
+        }, {
+            loader: "file",
+            test: /\.eot(\?v=\d+\.\d+\.\d+)?$/
+        }, {
+            loader: "url?limit=10000&mimetype=image/svg+xml",
+            test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        }]
     },
     postcss: function () {
         return [

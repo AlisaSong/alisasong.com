@@ -11,7 +11,6 @@
     border-left-color: #b2004d;
     border-right-color: #ff006e;
     border-top-color: #b2004d;
-    font-family: 'Helvetica Neue LT Pro';
     font-size: 16px;
     height: 28px;
     padding: 1px 2px;
@@ -81,7 +80,6 @@
 }
 
 .title {
-    font-family: 'Helvetica Neue LT Pro';
     font-size: 26px;
     font-weight: normal;
     height: 100px;

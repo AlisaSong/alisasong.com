@@ -9,7 +9,6 @@ import Home from './components/Home';
 import Portfolio from './components/Portfolio';
 import WorkWithMe from './components/WorkWithMe';
 
-
 export const routes = (
     <Route component={App}>
         <Route path={constants.pathAbout} component={About} />

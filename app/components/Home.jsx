@@ -66,7 +66,7 @@ export default class Home extends React.Component {
                 }
                 <section className={this.getSectionClass()}>
                     <div className={styles.homeWrapper}>
-                        <div className={styles.backgroundImage}></div>
+                        <div className={styles.backgroundImage} />
                         <h1 className={styles.homeTitle}>Alisa Song</h1>
                         <h2 className={[styles.textShadow, styles.homeDescription].join(' ')}>
                             <span className={styles.pinkText}>front-end developer</span>
