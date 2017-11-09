@@ -66,7 +66,7 @@ export default class Portfolio extends React.Component {
                 skills: [
                     'Web Development with React, Redux, TypeScript, HTML, CSS',
                     'Tools used include Node.js, Visual Studio, GitHub',
-                    'Telemetry with Google Analytic'
+                    'Telemetry with Google Analytics'
                 ],
                 skillsTitle: 'Skills I Am Using',
                 title: 'SanAndDesign.com (currently building)'
