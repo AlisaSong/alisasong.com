@@ -61,7 +61,7 @@ export default class Portfolio extends React.Component {
                     displayText: 'GitHub',
                     link: 'https://www.github.com/AlisaSong/sananddesign.com'
                 }],
-                description: `I'm am building San & Design's first website, using React, Redux and TypeScript. The site will prominently feature the floral designer's portfolio, services and contact information.`,
+                description: `I'm building San & Design's first website, using React, Redux and TypeScript. The site will prominently feature the floral designer's portfolio, services and contact information.`,
                 descriptionTitle: 'The Project',
                 skills: [
                     'Web Development with React, Redux, TypeScript, HTML, CSS',
