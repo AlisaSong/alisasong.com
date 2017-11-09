@@ -1,4 +1,17 @@
-﻿.portfolioTitle {
+﻿.dotNavigation {
+    color: #ff006e;
+    font-size: 26px;
+    position: absolute;
+    right: 0;
+    top: 40%;
+    width: 10%;
+}
+
+.dotNavigationSelected {
+    color: #6a002e;
+}
+
+.portfolioTitle {
     float: left;
     font-size: 26px;
     font-weight: normal;
@@ -10,7 +23,6 @@
 }
 
 .portfolioWrapper {
-    /*    padding: 0 0 0 100px;*/
     margin: 0 auto;
     width: 80%;
 }
@@ -22,7 +34,6 @@
 .projectButtons {
     width: 40%;
 }
-
 
 .projectButtonLink {
     background-color: #fff;
@@ -107,13 +118,16 @@
     .projectButtons {
         width: 80%;
     }
+
     .projectContentWrapper {
         margin: 0 auto;
         width: 80%;
     }
+
     .projectPhoneImage {
         margin-top: 10px;
     }
+
     .projectMobileDisplay {
         margin: 0 auto;
         width: 100%;
@@ -121,13 +135,13 @@
 }
 
 @media only screen and (max-width: 1050px) {
-
 }
 
 @media only screen and (max-width: 800px) {
     .projectContent {
         padding: 0;
     }
+
     .projectButtonLink {
         margin: 5px 5px;
     }
