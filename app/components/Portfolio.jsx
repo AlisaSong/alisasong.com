@@ -96,6 +96,7 @@ export default class Portfolio extends React.Component {
     }
 
     setProjectShown(index) {
+        this.scroller.scrollTop = 0;
         this.setState({
             selectedProjectIndex: index
         });
@@ -109,7 +110,7 @@ export default class Portfolio extends React.Component {
                 }
                 <section className={this.getSectionClass()}>
                     <Header />
-                    <article>
+                    <article ref={scroller => this.scroller = scroller}>
                         <div className={styles.portfolioWrapper}>
                             <h1 className={styles.portfolioTitle}>PORTFOLIO</h1>
                             {this.state.projects.map((project, indexProject) =>
@@ -117,7 +118,7 @@ export default class Portfolio extends React.Component {
                                     key={indexProject}>
                                     {this.state.selectedProjectIndex == indexProject &&
                                         <div>
-                                        <div className={styles.projectContentWrapper}>
+                                            <div className={styles.projectContentWrapper}>
                                                 <div className={styles.projectContent}>
                                                     <h2 className={styles.projectTitle}>{project.title}</h2>
                                                     <h3 className={styles.projectDescriptionTitle}>{project.descriptionTitle}</h3>
@@ -143,16 +144,20 @@ export default class Portfolio extends React.Component {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className={styles.projectMobileDisplay}>
-                                                <div className={styles.projectPhoneImageWrapper}>
-                                                    <img className={styles.projectPhoneImage} src={project.imagePhone} />
+                                            {project.imagePhone &&
+                                                <div className={styles.projectMobileDisplay}>
+                                                    <div className={styles.projectPhoneImageWrapper}>
+                                                        <img className={styles.projectPhoneImage} src={project.imagePhone} />
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className={styles.projectDesktopDisplay}>
-                                                <div className={styles.projectDesktopImageWrapper}>
-                                                    <img className={styles.projectDesktopImage} src={project.imageDesktop} />
+                                            }
+                                            {project.imageDesktop &&
+                                                <div className={styles.projectDesktopDisplay}>
+                                                    <div className={styles.projectDesktopImageWrapper}>
+                                                        <img className={styles.projectDesktopImage} src={project.imageDesktop} />
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            }
                                         </div>
                                     }
                                 </div>
