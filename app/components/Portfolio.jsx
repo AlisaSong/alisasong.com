@@ -13,6 +13,9 @@ import happyTummyDesktopImage from '../images/mac-happy-tummy-grill.png';
 import happyTummyPhoneImage from '../images/iphone8-happy-tummy-grill.png';
 import alisaSongDesktopImage from '../images/mac-alisa-song.png';
 import alisaSongPhoneImage from '../images/iphone8-alisa-song.png';
+import sanAndDesignDesktopImage from '../images/mac-san-and-design.png';
+import sanAndDesignPhoneImage from '../images/iphone8-san-and-design.png';
+
 
 export default class Portfolio extends React.Component {
     constructor(props) {
@@ -22,30 +25,26 @@ export default class Portfolio extends React.Component {
             isAnimating: window[constants.previousLocation] === constants.pathHome,
             projects: [{
                 buttons: [{
-                    displayText: 'Visit Project',
-                    link: 'http://www.happytummygrill.com'
-                }, {
                     displayText: 'GitHub',
-                    link: 'https://www.github.com/AlisaSong/happytummygrill.com'
+                    link: 'https://www.github.com/AlisaSong/sananddesign.com'
                 }],
-                description: `I built this client's first website from the ground-up, making sure the site is clean and easy-to-read while showcasing the menu items and key business information. I incorporated Google Analytics to track the success of this site, and since its launch, website traffic regularly spikes before lunch and dinner times.`,
+                description: `I built the first website for this Bellevue-based floral design shop, using React and TypeScript. This is the third website I have worked on. I worked with the client to design a site that fits her new business' needs, and created the website completely from scratch. The site features a gallery that serves as the designer's portfolio, outlines her services for potential clients, and has a built in contact form that allows clients to email her.`,
                 descriptionTitle: 'The Project',
-                imageDesktop: happyTummyDesktopImage,
-                imagePhone: happyTummyPhoneImage,
+                imageDesktop: sanAndDesignDesktopImage,
+                imagePhone: sanAndDesignPhoneImage,
                 skills: [
-                    'Web Development with JavaScript, HTML5, CSS3',
-                    'Tools used include Visual Studio, GitHub, Font Awesome',
-                    'Telemetry with Google Analytics',
-                    'Web Copywriting'
+                    'Web Development with React, TypeScript, HTML, CSS',
+                    'Tools used include Node.js, Visual Studio, GitHub',
+                    'Telemetry with Google Analytics'
                 ],
                 skillsTitle: 'Skills Used',
-                title: 'HappyTummyGrill.com'
+                title: 'SanAndDesign.com'
             }, {
                 buttons: [{
                     displayText: 'GitHub',
                     link: 'https://www.github.com/AlisaSong/alisasong.com'
                 }],
-                description: `I built the first version of my personal website using React. I incorporated a variety of CSS animations across the site. I also created the contact form from scratch, using Amazon's Elastic Beanstalk service to set up a Rest API that runs on a Node.js server.`,
+                description: `I built my personal website from scratch using React to show off my skills and work as a front-end developer. I incorporated a variety of CSS animations across the site. I set up a Node.js server with a Rest API so that visitors can use this site's contact form to send me mail directly.`,
                 descriptionTitle: 'The Project',
                 imageDesktop: alisaSongDesktopImage,
                 imagePhone: alisaSongPhoneImage,
@@ -58,18 +57,24 @@ export default class Portfolio extends React.Component {
                 title: 'AlisaSong.com v1'
             }, {
                 buttons: [{
-                    displayText: 'GitHub',
-                    link: 'https://www.github.com/AlisaSong/sananddesign.com'
-                }],
-                description: `I'm building San & Design's first website, using React, Redux and TypeScript. The site will prominently feature the floral designer's portfolio, services and contact information.`,
-                descriptionTitle: 'The Project',
-                skills: [
-                    'Web Development with React, Redux, TypeScript, HTML, CSS',
-                    'Tools used include Node.js, Visual Studio, GitHub',
-                    'Telemetry with Google Analytics'
-                ],
-                skillsTitle: 'Skills I Am Using',
-                title: 'SanAndDesign.com (currently building)'
+                        displayText: 'Visit Project',
+                        link: 'http://www.happytummygrill.com'
+                    }, {
+                        displayText: 'GitHub',
+                        link: 'https://www.github.com/AlisaSong/happytummygrill.com'
+                    }],
+                    description: `I built this client's first website from the ground-up, making sure the site is clean and easy-to-read while showcasing the menu items and key business information. I incorporated Google Analytics to track the success of this site, and since its launch, website traffic regularly spikes before lunch and dinner times.`,
+                    descriptionTitle: 'The Project',
+                    imageDesktop: happyTummyDesktopImage,
+                    imagePhone: happyTummyPhoneImage,
+                    skills: [
+                        'Web Development with JavaScript, HTML5, CSS3',
+                        'Tools used include Visual Studio, GitHub, Font Awesome',
+                        'Telemetry with Google Analytics',
+                        'Web Copywriting'
+                    ],
+                    skillsTitle: 'Skills Used',
+                    title: 'HappyTummyGrill.com'
             }],
             selectedProjectIndex: 0
         };
