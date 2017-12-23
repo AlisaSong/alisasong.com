@@ -42,6 +42,9 @@ export default class Portfolio extends React.Component {
                 title: 'SanAndDesign.com'
             }, {
                 buttons: [{
+                    displayText: 'Visit Project',
+                    link: 'http://www.alisasong.com'
+                }, {
                     displayText: 'GitHub',
                     link: 'https://www.github.com/AlisaSong/alisasong.com'
                 }],
