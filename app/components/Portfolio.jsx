@@ -32,6 +32,7 @@ export default class Portfolio extends React.Component {
                 descriptionTitle: 'The Project',
                 imageDesktop: sanAndDesignDesktopImage,
                 imagePhone: sanAndDesignPhoneImage,
+                scroller: undefined,
                 skills: [
                     'Web Development with React, TypeScript, HTML, CSS',
                     'Tools used include Node.js, Visual Studio, GitHub',
@@ -48,6 +49,7 @@ export default class Portfolio extends React.Component {
                 descriptionTitle: 'The Project',
                 imageDesktop: alisaSongDesktopImage,
                 imagePhone: alisaSongPhoneImage,
+                scroller: undefined,
                 skills: [
                     'Web Development with React, JavaScript, HTML, CSS',
                     'Tools used include Node.js, Amazon Web Services SDK, Visual Studio, GitHub, Font Awesome',
@@ -57,24 +59,25 @@ export default class Portfolio extends React.Component {
                 title: 'AlisaSong.com v1'
             }, {
                 buttons: [{
-                        displayText: 'Visit Project',
-                        link: 'http://www.happytummygrill.com'
-                    }, {
-                        displayText: 'GitHub',
-                        link: 'https://www.github.com/AlisaSong/happytummygrill.com'
-                    }],
-                    description: `I built this client's first website from the ground-up, making sure the site is clean and easy-to-read while showcasing the menu items and key business information. I incorporated Google Analytics to track the success of this site, and since its launch, website traffic regularly spikes before lunch and dinner times.`,
-                    descriptionTitle: 'The Project',
-                    imageDesktop: happyTummyDesktopImage,
-                    imagePhone: happyTummyPhoneImage,
-                    skills: [
-                        'Web Development with JavaScript, HTML5, CSS3',
-                        'Tools used include Visual Studio, GitHub, Font Awesome',
-                        'Telemetry with Google Analytics',
-                        'Web Copywriting'
-                    ],
-                    skillsTitle: 'Skills Used',
-                    title: 'HappyTummyGrill.com'
+                    displayText: 'Visit Project',
+                    link: 'http://www.happytummygrill.com'
+                }, {
+                    displayText: 'GitHub',
+                    link: 'https://www.github.com/AlisaSong/happytummygrill.com'
+                }],
+                description: `I built this client's first website from the ground-up, making sure the site is clean and easy-to-read while showcasing the menu items and key business information. I incorporated Google Analytics to track the success of this site, and since its launch, website traffic regularly spikes before lunch and dinner times.`,
+                descriptionTitle: 'The Project',
+                imageDesktop: happyTummyDesktopImage,
+                imagePhone: happyTummyPhoneImage,
+                scroller: undefined,
+                skills: [
+                    'Web Development with JavaScript, HTML5, CSS3',
+                    'Tools used include Visual Studio, GitHub, Font Awesome',
+                    'Telemetry with Google Analytics',
+                    'Web Copywriting'
+                ],
+                skillsTitle: 'Skills Used',
+                title: 'HappyTummyGrill.com'
             }],
             selectedProjectIndex: 0
         };
@@ -101,7 +104,8 @@ export default class Portfolio extends React.Component {
     }
 
     setProjectShown(index) {
-        this.scroller.scrollTop = 0;
+        //this.scroller.scrollTop = 0;
+        this.state.projects[index].scroller.scrollIntoView();
         this.setState({
             selectedProjectIndex: index
         });
@@ -121,50 +125,48 @@ export default class Portfolio extends React.Component {
                             {this.state.projects.map((project, indexProject) =>
                                 <div className={styles.projectWrapper}
                                     key={indexProject}>
-                                    {this.state.selectedProjectIndex == indexProject &&
-                                        <div>
-                                            <div className={styles.projectContentWrapper}>
-                                                <div className={styles.projectContent}>
-                                                    <h2 className={styles.projectTitle}>{project.title}</h2>
-                                                    <h3 className={styles.projectDescriptionTitle}>{project.descriptionTitle}</h3>
-                                                    <p className={styles.projectDescriptionText}>{project.description}</p>
-                                                    <h3 className={styles.projectDescriptionTitle}>{project.skillsTitle}</h3>
-                                                    <ul className={styles.projectDescriptionText}>
-                                                        {project.skills.map((skill, indexSkill) =>
-                                                            <li className={styles.projectBullet}
-                                                                key={indexSkill}>
-                                                                {skill}
-                                                            </li>
-                                                        )}
-                                                    </ul>
-                                                    <div className={styles.projectButtons}>
-                                                        {project.buttons.map((button, indexButton) =>
-                                                            <a className={styles.projectButtonLink}
-                                                                href={button.link}
-                                                                key={indexButton}
-                                                                target="_blank">
-                                                                {button.displayText}
-                                                            </a>
-                                                        )}
-                                                    </div>
+                                    <div>
+                                        <div className={styles.projectContentWrapper}>
+                                            <div className={styles.projectContent}>
+                                                <h2 className={styles.projectTitle} ref={scroller => project.scroller = scroller}>{project.title}</h2>
+                                                <h3 className={styles.projectDescriptionTitle}>{project.descriptionTitle}</h3>
+                                                <p className={styles.projectDescriptionText}>{project.description}</p>
+                                                <h3 className={styles.projectDescriptionTitle}>{project.skillsTitle}</h3>
+                                                <ul className={styles.projectDescriptionText}>
+                                                    {project.skills.map((skill, indexSkill) =>
+                                                        <li className={styles.projectBullet}
+                                                            key={indexSkill}>
+                                                            {skill}
+                                                        </li>
+                                                    )}
+                                                </ul>
+                                                <div className={styles.projectButtons}>
+                                                    {project.buttons.map((button, indexButton) =>
+                                                        <a className={styles.projectButtonLink}
+                                                            href={button.link}
+                                                            key={indexButton}
+                                                            target="_blank">
+                                                            {button.displayText}
+                                                        </a>
+                                                    )}
                                                 </div>
                                             </div>
-                                            {project.imagePhone &&
-                                                <div className={styles.projectMobileDisplay}>
-                                                    <div className={styles.projectPhoneImageWrapper}>
-                                                        <img className={styles.projectPhoneImage} src={project.imagePhone} />
-                                                    </div>
-                                                </div>
-                                            }
-                                            {project.imageDesktop &&
-                                                <div className={styles.projectDesktopDisplay}>
-                                                    <div className={styles.projectDesktopImageWrapper}>
-                                                        <img className={styles.projectDesktopImage} src={project.imageDesktop} />
-                                                    </div>
-                                                </div>
-                                            }
                                         </div>
-                                    }
+                                        {project.imagePhone &&
+                                            <div className={styles.projectMobileDisplay}>
+                                                <div className={styles.projectPhoneImageWrapper}>
+                                                    <img className={styles.projectPhoneImage} src={project.imagePhone} />
+                                                </div>
+                                            </div>
+                                        }
+                                        {project.imageDesktop &&
+                                            <div className={styles.projectDesktopDisplay}>
+                                                <div className={styles.projectDesktopImageWrapper}>
+                                                    <img className={styles.projectDesktopImage} src={project.imageDesktop} />
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
                                 </div>
                             )}
                         </div>

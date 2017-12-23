@@ -75,6 +75,7 @@
 
 .projectDesktopDisplay {
     float: left;
+    margin-bottom: 50px;
     width: 100%;
 }
 
