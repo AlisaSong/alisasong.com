@@ -138,9 +138,6 @@ export default class WorkWithMe extends React.Component {
                                 <p className={styles.description}>
                                     Interested in working together? Fill out the form and I'll get back to you within 48 hours.
                                 </p>
-                                <p className={styles.description}>
-                                    Recruiters - I'm currently looking for a full-time position as a front-end developer, feel free to reach out with any opportunities.
-                                </p>
                                 <div className={styles.contactFormWrapper}>
                                     <label className={styles.label}>
                                         <span className={styles.inputType}>Name</span>
