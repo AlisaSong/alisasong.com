@@ -24,7 +24,9 @@ export default class Portfolio extends React.Component {
         this.state = {
             isAnimating: window[constants.previousLocation] === constants.pathHome,
             projects: [{
-                buttons: [{
+                buttons: [{displayText: 'Visit Project',
+                    link: 'http://www.sananddesign.com/home'
+                }, {
                     displayText: 'GitHub',
                     link: 'https://www.github.com/AlisaSong/sananddesign.com'
                 }],
