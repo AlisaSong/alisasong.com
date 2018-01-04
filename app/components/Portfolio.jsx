@@ -25,12 +25,15 @@ export default class Portfolio extends React.Component {
             isAnimating: window[constants.previousLocation] === constants.pathHome,
             projects: [{
                 buttons: [{displayText: 'Visit Project',
-                    link: 'http://www.sananddesign.com/home'
+                    link: 'http://www.alisasong.com/portfolio-sananddesign'
                 }, {
                     displayText: 'GitHub',
                     link: 'https://www.github.com/AlisaSong/sananddesign.com'
                 }],
-                description: `I built the first website for this Bellevue-based floral design shop, using React and TypeScript. This is the third website I have worked on. I worked with the client to design a site that fits her new business' needs, and created the website completely from scratch. The site features a gallery that serves as the designer's portfolio, outlines her services for potential clients, and has a built in contact form that allows clients to email her.`,
+                description: `I built the first website for this Bellevue-based floral design shop, using React, Redux and TypeScript.
+                             This is the third website I have worked on, and was a temporary placeholder site for the client.
+                             I used webpack for bundling and minification, optimized the loading time for this image-heavy site through a npm package,
+                             and routed the website using the HTML5 browser router feature.`,
                 descriptionTitle: 'The Project',
                 imageDesktop: sanAndDesignDesktopImage,
                 imagePhone: sanAndDesignPhoneImage,
@@ -50,8 +53,10 @@ export default class Portfolio extends React.Component {
                     displayText: 'GitHub',
                     link: 'https://www.github.com/AlisaSong/alisasong.com'
                 }],
-                description: `I built my personal website from scratch using React to show off my skills and work as a front-end developer. I incorporated a variety of CSS animations across the site. I set up a Node.js server with a Rest API so that visitors can use this site's contact form to send me mail directly.`,
-                descriptionTitle: 'The Project',
+                description: `I built my personal website from scratch using React to show off my skills and work as a front-end developer.
+                              I set up a Node.js server with a Rest API, that runs on AWS' EC2, so that visitors can use this site's contact form to send me mail directly.
+                                I also incorporated a variety of CSS animations across the site.`,
+                    descriptionTitle: 'The Project',
                 imageDesktop: alisaSongDesktopImage,
                 imagePhone: alisaSongPhoneImage,
                 scroller: undefined,
@@ -70,7 +75,9 @@ export default class Portfolio extends React.Component {
                     displayText: 'GitHub',
                     link: 'https://www.github.com/AlisaSong/happytummygrill.com'
                 }],
-                description: `I built this client's first website from the ground-up, making sure the site is clean and easy-to-read while showcasing the menu items and key business information. I incorporated Google Analytics to track the success of this site, and since its launch, website traffic regularly spikes before lunch and dinner times.`,
+                description: `I built this client's first website from the ground-up using JavaScript, HTML and CSS, making sure the site is clean and easy-to-read while showcasing the menu items and key business information.
+                              I used CSS to ensure the site is responsive to the screen size, and is mobile and desktop-friendly.
+                              I incorporated Google Analytics to track the success of this site, and since its launch, website traffic regularly spikes before lunch and dinner times.`,
                 descriptionTitle: 'The Project',
                 imageDesktop: happyTummyDesktopImage,
                 imagePhone: happyTummyPhoneImage,
