@@ -16,7 +16,6 @@ import alisaSongPhoneImage from '../images/iphone8-alisa-song.png';
 import sanAndDesignDesktopImage from '../images/mac-san-and-design.png';
 import sanAndDesignPhoneImage from '../images/iphone8-san-and-design.png';
 
-
 export default class Portfolio extends React.Component {
     constructor(props) {
         super(props);
@@ -56,7 +55,7 @@ export default class Portfolio extends React.Component {
                 description: `I built my personal website from scratch using React to show off my skills and work as a front-end developer.
                               I set up a Node.js server with a Rest API, that runs on AWS' EC2, so that visitors can use this site's contact form to send me mail directly.
                                 I also incorporated a variety of CSS animations across the site.`,
-                    descriptionTitle: 'The Project',
+                descriptionTitle: 'The Project',
                 imageDesktop: alisaSongDesktopImage,
                 imagePhone: alisaSongPhoneImage,
                 scroller: undefined,
@@ -86,13 +85,20 @@ export default class Portfolio extends React.Component {
                     'Web Development with JavaScript, HTML5, CSS3',
                     'Tools used include Visual Studio, GitHub, Font Awesome',
                     'Telemetry with Google Analytics',
-                    'Web Copywriting'
                 ],
                 skillsTitle: 'Skills Used',
                 title: 'Happy Tummy Grill Website'
             }],
             selectedProjectIndex: 0
         };
+    }
+
+    componentDidMount() {
+        this.scroller.addEventListener('scroll', this.handleScroll.bind(this));
+    }
+
+    componentWillUnmount() {
+        this.scroller.removeEventListener('scroll', this.handleScroll);
     }
 
     getFontClass(icon, index) {
@@ -115,9 +121,24 @@ export default class Portfolio extends React.Component {
         return sectionClass;
     }
 
+    handleScroll(event) {
+        let scrollTopPosition = this.scroller.scrollTop;
+        let foundSection = false;
+        let index = 0;
+        for (let i = this.state.projects.length - 1; i >= 0 && !foundSection; i--) {
+            foundSection = this.state.projects[i].scroller.offsetTop < scrollTopPosition;
+            if (foundSection) {
+                index = i;
+            }
+        }
+        this.setState({
+            selectedProjectIndex: index
+        });
+    }
+
     setProjectShown(index) {
-        //this.scroller.scrollTop = 0;
         this.state.projects[index].scroller.scrollIntoView();
+        this.scroller.scrollTop -= 10;
         this.setState({
             selectedProjectIndex: index
         });
