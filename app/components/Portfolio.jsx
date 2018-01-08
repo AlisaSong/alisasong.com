@@ -138,10 +138,10 @@ export default class Portfolio extends React.Component {
 
     setProjectShown(index) {
         this.state.projects[index].scroller.scrollIntoView();
-        this.scroller.scrollTop -= 10;
         this.setState({
             selectedProjectIndex: index
         });
+        
     }
 
     render() {
