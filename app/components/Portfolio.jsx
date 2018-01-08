@@ -30,7 +30,7 @@ export default class Portfolio extends React.Component {
                     displayText: 'GitHub',
                     link: 'https://www.github.com/AlisaSong/sananddesign.com'
                 }],
-                description: `I built the first website for this Bellevue-based floral design shop, using React, Redux and TypeScript.
+                description: `I built this Bellevue-based floral design shop's first website, using React, Redux and TypeScript.
                              This is the third website I have worked on, and was a temporary placeholder site for the client.
                              I used webpack for bundling and minification, optimized the loading time for this image-heavy site through a npm package,
                              and routed the website using the HTML5 browser router feature.`,
@@ -44,7 +44,7 @@ export default class Portfolio extends React.Component {
                     'Telemetry with Google Analytics'
                 ],
                 skillsTitle: 'Skills Used',
-                title: 'SanAndDesign.com'
+                title: 'San & Design Website v1'
             }, {
                 buttons: [{
                     displayText: 'Visit Project',
@@ -89,7 +89,7 @@ export default class Portfolio extends React.Component {
                     'Web Copywriting'
                 ],
                 skillsTitle: 'Skills Used',
-                title: 'HappyTummyGrill.com'
+                title: 'Happy Tummy Grill Website'
             }],
             selectedProjectIndex: 0
         };
